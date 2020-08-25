@@ -1,0 +1,50 @@
+﻿Phase 1
+    Alphabet and numbers
+    Times of the day And days of the week
+    Months of the year and Seasons
+Program flow
+    Read source file.
+    Write to file.
+    Extract relevant data from source And store to file.
+Extract source data based on phase criteria.
+    Enum type : alphabet, numbers, weekdays, months, seasons, times of the day.
+    Data containers : list<object>.
+    Static Class: read source, write to file, Phase1 sorter class.
+    Non static class content : Done
+        Property words in the phase.
+        Property first language description of each word.
+        Property first language word.
+        Property to track score for each word.
+        Property to track description score.
+        Property to track time spent to practice a word.
+        Method to load phase words.
+        Method to write score information to file.
+        Method to grade word score.
+        Method to grade word description.
+        Method to compile score card report.
+Graphic User Interphase Requirements.
+    User Name, session number, current score.
+    Progression chart, learnt words counter, time taken to learn new word.
+    Word to learn, description of word, word to learn in first language.
+    User input: word to learn, 1st language description, 1st language word.
+    Buttons : Next word, previous word, practice word, practice description, check response, hints.
+Program response
+    Present user with word, word description and 1st language word.
+    If practice word is set, user can’t view the word but can see the 1st language equivalent and description of the word.
+    If practice description is set, user can’t view the words description but can see the word and the 1st language word equivalent.
+    After entering relevant response program checks correctness of user response after user toggles check response.
+    On request of hints, while practice word is selected letters of the word are unveiled, while description is set parts of the words making up the description are unveiled.
+    Practice word and description can not be both set at the same time.
+    Next word loads data for the next word.
+    Previous loads data for the previous word.
+    User will pass phase one when they have learnt 60% of the words in phase one container.
+    Each session comprises of 5% of the words in the phase container.
+    Timing for learning a word starts when user selects either of the practice modes and stops when user selects check response. If user request hints the timer is reset and the total score for that practice session is based on number of hints requested to total length of the word / description.
+
+Phase 2
+common greetings
+Phase 3
+Write a short story in known language - Translated version of short story
+Grammar errors of direct translations based on rules of grammar.
+Phase 4
+Sentence construction using grammar rules.

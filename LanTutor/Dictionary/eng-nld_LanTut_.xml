@@ -1,0 +1,687 @@
+<?xml version="1.0"?>
+<WordTransDefLibrary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SessionLibrary>
+    <WordTransDef>
+      <lword>British, britiʃ, |British, britiʃ, |03 British 0 British_people 0 Brits 0</lword>
+      <lTrans>Brits, </lTrans>
+      <ldef>
+        <string>| of or relating to or characteristic of Great Britain or its people or culture; "his wife is British"  </string>
+        <string>| the people of Great Britain  </string>
+        <string>Brits, </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Mr., mr, |Mrs., mz, |02 Mrs 0 Mrs. 0</lword>
+      <lTrans>meneer, </lTrans>
+      <ldef>
+        <string>| the use of nuclear magnetic resonance of protons to produce proton density images  </string>
+        <string>| a form of address for a man  </string>
+        <string>| a form of address for a married woman  </string>
+        <string>| a machine-readable version of a standard dictionary; organized alphabetically  </string>
+        <string>meneer, </string>
+        <string>mevrouw, </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Mrs., mz, |Mrs., mz, |02 Mrs 0 Mrs. 0</lword>
+      <lTrans>mevrouw, </lTrans>
+      <ldef>
+        <string>| a form of address for a married woman  </string>
+        <string>mevrouw, </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>a, ə, |04 stay 2 stay_on 0 continue a remain 3</lword>
+      <lTrans>een, </lTrans>
+      <ldef>
+        <string>| the blood group whose red cells carry the A antigen  </string>
+        <string>| the 1st letter of the Roman alphabet  </string>
+        <string>| King of England and Ireland in 1936; his marriage to Wallis Warfield Simpson created a constitutional crisis leading to his abdication (1894-1972)  </string>
+        <string>| the basic unit of electric current adopted under the Systeme International d'Unites; "a typical household circuit carries 15 to 50 amps"  </string>
+        <string>| a metric unit of length equal to one ten billionth of a meter (or 0.0001 micron); used to specify wavelengths of electromagnetic radiation  </string>
+        <string>| (biochemistry) purine base found in DNA and RNA; pairs with thymine in DNA and with uracil in RNA  </string>
+        <string>| one of the four nucleotides used in building DNA; all four nucleotides have a common phosphate group and a sugar (ribose)  </string>
+        <string>| any of several fat-soluble vitamins essential for normal vision; prevents night blindness or inflammation or dryness of the eyes  </string>
+        <string>een, </string>
+        <string>| in a manner affording benefit or advantage; "she married well"; "The children were settled advantageously in Seattle"  </string>
+        <string>| in a disadvantageous way; to someone's disadvantage; "the venture turned out badly for the investors"; "angry that the case was settled disadvantageously for them"  </string>
+        <string>| become less intense and fade away gradually; "her resistance melted under his charm"; "her hopes evaporated after years of waiting for her fiance"  </string>
+        <string>| be cooked until very little liquid is left; "The sauce should reduce to one cup"  </string>
+        <string>| begin with vigor; "He launched into a long diatribe"; "She plunged into a dangerous adventure"  </string>
+        <string>| set out on (an enterprise or subject of study); "she embarked upon a new career"  </string>
+        <string>| repress or suppress (something regarded as undesirable); "The police clamped down on illegal drugs"  </string>
+        <string>| stop operating; "My computer crashed last night"; "The system goes down at least once a week"  </string>
+        <string>| grow emotionally or mature; "The child developed beautifully in her new kindergarten"; "When he spent a summer at camp, the boy grew noticeably and no longer showed some of his old adolescent behavior"  </string>
+        <string>| divide (a disk) into marked sectors so that it may store data; "Please format this disk before entering data!"  </string>
+        <string>| become folded or folded up; "The bed folds in a jiffy"  </string>
+        <string>| become wrinkled or crumpled or creased; "This fabric won't wrinkle"  </string>
+        <string>| be a mystery or bewildering to; "This beats me!"; "Got me--I don't know the answer!"; "a vexing problem"; "This question really stuck me"  </string>
+        <string>| have confidence or faith in; "We can trust in God"; "Rely on your friends"; "bank on your good education"; "I swear by my grandmother's recipes"  </string>
+        <string>| come to believe on the basis of emotion, intuitions, or indefinite grounds; "I feel that he doesn't like me"; "I find him to be obnoxious"; "I found the movie rather entertaining"  </string>
+        <string>| take into consideration for exemplifying purposes; "Take the case of China"; "Consider the following case"  </string>
+        <string>| harass with constant criticism; "Don't always pick on your little brother"  </string>
+        <string>| make a prediction about; tell in advance; "Call the outcome of an election"  </string>
+        <string>| find out, learn, or determine with certainty, usually by making an inquiry or other effort; "I want to see whether she speaks French"; "See whether it works"; "find out if he speaks Russian"; "Check whether the train leaves on time"  </string>
+        <string>| add details, as to an account or idea; clarify the meaning of and discourse in a learned way, usually in writing; "She elaborated on the main ideas in her dissertation"  </string>
+        <string>| get one's revenge for a wrong or an injury; "I finally settled with my old enemy"  </string>
+        <string>| intend (something) to move towards a certain goal; "He aimed his fists towards his opponent's face"; "criticism directed at her superior"; "direct your anger towards others, not towards yourself"  </string>
+        <string>| catch up with and possibly overtake; "The Rolls Royce caught us near the exit ramp"  </string>
+        <string>| prey on or hunt for; "These mammals predate certain eggs"  </string>
+        <string>| remove, usually with some force or effort; also used in an abstract sense; "pull weeds"; "extract a bad tooth"; "take out a splinter"; "extract information from the telegram"  </string>
+        <string>| reach with a blow or hit in a particular spot; "the rock caught her in the back of the head"; "The blow got him in the back"; "The punch caught him in the stomach"  </string>
+        <string>| press down; "Depress the space key"  </string>
+        <string>| let feed in a field or pasture or meadow  </string>
+        <string>| destroy the completeness of a set of related items; "The book dealer would not break the set"  </string>
+        <string>| let or cause to fall in drops; "dribble oil into the mixture"  </string>
+        <string>| perform on a stage or theater; "She acts in this play"; "He acted in `Julius Caesar'"; "I played in `A Christmas Carol'"  </string>
+        <string>| fill with apprehension or alarm; cause to be unpleasantly surprised; "I was horrified at the thought of being late for my interview"; "The news of the executions horrified us"  </string>
+        <string>| move in a wavy pattern or with a rising and falling motion; "The curtains undulated"; "the waves rolled towards the beach"  </string>
+        <string>| proceed along a path; "work one's way through the crowd"; "make one's way into the forest"  </string>
+        <string>| come together, as if in an embrace; "Her arms closed around her long lost relative"  </string>
+        <string>| cause to move fast or to rush or race; "The psychologist raced the rats through a long maze"  </string>
+        <string>| appear to be moving upward, as by means of tendrils; "the vine climbed up the side of the house"  </string>
+        <string>| look through a book or other written material; "He thumbed through the report"; "She leafed through the volume"  </string>
+        <string>| maintain for use and service; "I keep a car in the countryside"; "She keeps an apartment in Paris for her shopping trips"  </string>
+        <string>| encounter by chance; "I stumbled across a long-lost cousin last night in a restaurant"  </string>
+        <string>| come into the possession of; "The house accrued to the oldest son"  </string>
+        <string>| pass on stealthily; "He slipped me the key when nobody was looking"  </string>
+        <string>| transfer to another; "communicate a disease"  </string>
+        <string>| impinge or infringe upon; "This impinges on my rights as an individual"; "This matter entrenches on other domains"  </string>
+        <string>| exert oneself continuously, vigorously, or obtrusively to gain an end or engage in a crusade for a certain cause or person; be an advocate for; "The liberal party pushed for reforms"; "She is crusading for women's rights"; "The Dean is pushing for his favorite candidate"  </string>
+        <string>| continue in a place, position, or situation; "After graduation, she stayed on in Cambridge as a student adviser"; "Stay with me, please"; "despite student protests, he remained Dean for another year"; "She continued as deputy mayor for another year"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>able, eibl, |able, eibl, |02 able 0 able-bodied 0</lword>
+      <lTrans>bereid, </lTrans>
+      <ldef>
+        <string>| (usually followed by `to') having the necessary means or skill or know-how or authority to do something; "able to swim"; "she was able to program her computer"; "we were at last able to buy a car"; "able to get a grant for the project"  </string>
+        <string>| having inherent physical or mental ability or capacity; "able to learn"; "human beings are able to walk on two feet"; "Superman is able to leap tall buildings"  </string>
+        <string>| have the skills and qualifications to do things well; "able teachers"; "a capable administrator"; "children as young as 14 can be extremely capable and dependable"  </string>
+        <string>| having a strong healthy body; "an able seaman"; "every able-bodied young man served in the army"  </string>
+        <string>bereid, </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>about, əbaut, |01 about 3</lword>
+      <lTrans>aangaande, </lTrans>
+      <ldef>
+        <string>aangaande, </string>
+        <string>almost, æmoust, </string>
+        <string>around, əraund, </string>
+        <string>| (of quantities) imprecise but fairly close to correct; "lasted approximately an hour"; "in just about a minute"; "he's about 30 years old"; "I've had about all I can stand"; "we meet about once a month"; "some forty people came"; "weighs around a hundred pounds"; "roughly $3,000"; "holds 3 gallons, more or less"; "20 or so people were at the party"  </string>
+        <string>| in the area or vicinity; "a few spectators standing about"; "hanging around"; "waited around for the next flight"  </string>
+        <string>| all around or on all sides; "dirty clothes lying around (or about)"; "let's look about for help"; "There were trees growing all around"; "she looked around her"  </string>
+        <string>| in or to a reversed position or direction; "about face"; "suddenly she turned around"  </string>
+        <string>| used of movement to or among many different places or in no particular direction; "wandering about with no place to go"; "people were rushing about"; "news gets around (or about)"; "traveled around in Asia"; "he needs advice from someone who's been around"; "she sleeps around"  </string>
+        <string>| (of actions or states) slightly short of or not quite accomplished; all but; "the job is (just) about done"; "the baby was almost asleep when the alarm sounded"; "we're almost finished"; "the car all but ran her down"; "he nearly fainted"; "talked for nigh onto 2 hours"; "the recording is well-nigh perfect"; "virtually all the parties signed the contract"; "I was near exhausted by the run"; "most everyone agrees"  </string>
+        <string>| in rotation or succession; "turn about is fair play"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>above, əbouv, |04 above 1 higher_up 0 in_a_higher_place 0 to_a_higher_place 0</lword>
+      <lTrans>above, əbouv, </lTrans>
+      <ldef>
+        <string>| appearing earlier in the same text; "flaws in the above interpretation"  </string>
+        <string>| an earlier section of a written text; "for instructions refer to the above"  </string>
+        <string>above, əbouv, </string>
+        <string>| at an earlier place; "see above"  </string>
+        <string>| in or to a place that is higher  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>across, əkrɔs, |01 across 1</lword>
+      <lTrans>over, </lTrans>
+      <ldef>
+        <string>over, </string>
+        <string>| transversely; "the marble slabs were cut across"  </string>
+        <string>| to the opposite side; "the football field was 300 feet across"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>after, ɑːftər, |01 after 0</lword>
+      <lTrans>after, ɑːftər, </lTrans>
+      <ldef>
+        <string>after, ɑːftər, </string>
+        <string>| happening at a time subsequent to a reference time; "he apologized subsequently"; "he's going to the store but he'll be back here later"; "it didn't happen until afterward"; "two hours after that"  </string>
+        <string>| behind or in the rear; "and Jill came tumbling after"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>again, əgein, |04 again 0 once_again 0 once_more 0 over_again 0</lword>
+      <lTrans>again, əgein, </lTrans>
+      <ldef>
+        <string>again, əgein, </string>
+        <string>| anew; "she tried again"; "they rehearsed the scene again"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>against, əgenst, |</lword>
+      <lTrans>against, əgenst, </lTrans>
+      <ldef />
+    </WordTransDef>
+    <WordTransDef>
+      <lword>age, eidʒ, |01 age 2</lword>
+      <lTrans>age, eidʒ, </lTrans>
+      <ldef>
+        <string>| how long something has existed; "it was replaced because of its age"  </string>
+        <string>| a time of life (usually defined in years) at which some particular qualification or power arises; "she was now of school age"; "tall for his eld"  </string>
+        <string>| a late time of life; "old age is not for sissies"; "he's showing his years"; "age hasn't slowed him down at all"; "a beard white with eld"; "on the brink of geezerhood"  </string>
+        <string>| a prolonged period of time; "we've known each other for ages"; "I haven't been there for years and years"  </string>
+        <string>| an era of history having some distinctive feature; "we live in a litigious age"  </string>
+        <string>age, eidʒ, </string>
+        <string>| grow old or older; "She aged gracefully"; "we age every day--what a depressing thought!"; "Young men senesce"  </string>
+        <string>| begin to seem older; get older; "The death of his wife caused him to age fast"  </string>
+        <string>| make older; "The death of his child aged him tremendously"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>ago, əgɔ, |01 ago 0</lword>
+      <lTrans>ago, əgɔ, </lTrans>
+      <ldef>
+        <string>| gone by; or in the past; "two years ago"; "`agone' is an archaic word for `ago'"  </string>
+        <string>ago, əgɔ, </string>
+        <string>| in the past; "long ago"; "sixty years ago my grandfather came to the U.S."  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>air, ɛər, |03 air_out 0 air 0 aerate 0</lword>
+      <lTrans>air, ɛər, </lTrans>
+      <ldef>
+        <string>| travel via aircraft; "air travel involves too much waiting in airports"; "if you've time to spare go by air"  </string>
+        <string>| a distinctive but intangible quality surrounding a person or thing; "an air of mystery"; "the house had a neglected air"; "an atmosphere of defeat pervaded the candidate's headquarters"; "the place had an aura of romance"  </string>
+        <string>| medium for radio and television broadcasting; "the program was on the air from 9 til midnight"; "the president used the airwaves to take his message to the people"  </string>
+        <string>| a succession of notes forming a distinctive sequence; "she was humming an air from Beethoven"  </string>
+        <string>| the mass of air surrounding the Earth; "there was great heat as the comet entered the atmosphere"; "it was exposed to the air"  </string>
+        <string>| the region above the ground; "her hand stopped in mid air"; "he threw the ball into the air"  </string>
+        <string>| a slight wind (usually refreshing); "the breeze was cooled by the lake"; "as he waited he could feel the air on his neck"  </string>
+        <string>| a mixture of gases (especially oxygen) required for breathing; the stuff that the wind consists of; "air pollution"; "a smell of chemicals in the air"; "open a window and let in some air"; "I need some fresh air"  </string>
+        <string>| once thought to be one of four elements composing the universe (Empedocles)  </string>
+        <string>air, ɛər, </string>
+        <string>| expose to cool or cold air so as to cool or freshen; "air the old winter clothes"; "air out the smoke-filled rooms"  </string>
+        <string>| expose to warm or heated air, so as to dry; "Air linen"  </string>
+        <string>| make public; "She aired her opinions on welfare"  </string>
+        <string>| broadcast over the airwaves, as in radio or television; "We cannot air this X-rated song"  </string>
+        <string>| be broadcast; "This show will air Saturdays at 2 P.M."  </string>
+        <string>| expose to fresh air; "aerate your old sneakers"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>all, l, |07 wholly 0 entirely 0 completely 4 totally 0 all 0 altogether 4 whole 0</lword>
+      <lTrans>all, l, </lTrans>
+      <ldef>
+        <string>| completely given to or absorbed by; "became all attention"  </string>
+        <string>all, l, </string>
+        <string>| to a complete degree or to the full or entire extent (`whole' is often used informally for `wholly'); "he was wholly convinced"; "entirely satisfied with the meal"; "it was completely different from what we expected"; "was completely at fault"; "a totally new situation"; "the directions were all wrong"; "it was not altogether her fault"; "an altogether new approach"; "a whole new idea"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>almost, æmoust, |08 about 5 almost 0 most 2 nearly 0 near 3 nigh 1 virtually 2 well-nigh 0</lword>
+      <lTrans>almost, æmoust, </lTrans>
+      <ldef>
+        <string>almost, æmoust, </string>
+        <string>| (of actions or states) slightly short of or not quite accomplished; all but; "the job is (just) about done"; "the baby was almost asleep when the alarm sounded"; "we're almost finished"; "the car all but ran her down"; "he nearly fainted"; "talked for nigh onto 2 hours"; "the recording is well-nigh perfect"; "virtually all the parties signed the contract"; "I was near exhausted by the run"; "most everyone agrees"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>alone, əloun, |03 alone 1 solo 0 unaccompanied 0</lword>
+      <lTrans>alone, əloun, </lTrans>
+      <ldef>
+        <string>alone, əloun, </string>
+        <string>| without any others being included or involved; "was entirely to blame"; "a school devoted entirely to the needs of problem children"; "he works for Mr. Smith exclusively"; "did it solely for money"; "the burden of proof rests on the prosecution alone"; "a privilege granted only to him"  </string>
+        <string>| without anybody else or anything else; "the child stayed home alone"; "the pillar stood alone, supporting nothing"; "he flew solo"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>along, ælɔŋ, |01 along 4</lword>
+      <lTrans>along, ælɔŋ, </lTrans>
+      <ldef>
+        <string>along, ælɔŋ, </string>
+        <string>| with a forward motion; "we drove along admiring the view"; "the horse trotted along at a steady pace"; "the circus traveled on to the next city"; "move along"; "march on"  </string>
+        <string>| in accompaniment or as a companion; "his little sister came along to the movies"; "I brought my camera along"; "working along with his father"  </string>
+        <string>| in addition (usually followed by `with'); "we sent them food and some clothing went along in the package"; "along with the package came a bill"; "consider the advantages along with the disadvantages"  </string>
+        <string>| to a more advanced state; "the work is moving along"; "well along in their research"; "hurrying their education along"; "getting along in years"  </string>
+        <string>| in line with a length or direction (often followed by `by' or `beside'); "pass the word along"; "ran along beside me"; "cottages along by the river"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>already, ɔːlrediː, |01 already 0</lword>
+      <lTrans>already, ɔːlrediː, </lTrans>
+      <ldef>
+        <string>already, ɔːlrediː, </string>
+        <string>| prior to a specified or implied time; "she has already graduated"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>also, ælsou, |05 besides 3 too 1 also 0 likewise 1 as_well 1</lword>
+      <lTrans>also, ælsou, </lTrans>
+      <ldef>
+        <string>also, ælsou, </string>
+        <string>| in addition; "he has a Mercedes, too"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>always, ɔːlweiz, |03 constantly 3 invariably 0 always 4</lword>
+      <lTrans>altĳd, immer, steeds, </lTrans>
+      <ldef>
+        <string>altĳd, immer, steeds, </string>
+        <string>| at all times; all the time and on every occasion; "I will always be there to help you"; "always arrives on time"; "there is always some pollution in the air"; "ever hoping to strike it rich"; "ever busy"  </string>
+        <string>| forever; throughout all time; "we will always be friends"; "I shall treasure it always"; "I will always love you"  </string>
+        <string>| at any time or in any event; "you can always resign if you don't like it"; "you could always take a day off"  </string>
+        <string>| without interruption; "the world is constantly changing"  </string>
+        <string>| without variation or change, in every case; "constantly kind and gracious"; "he always arrives on time"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>among, əmʌŋ, |</lword>
+      <lTrans>among, əmʌŋ, </lTrans>
+      <ldef />
+    </WordTransDef>
+    <WordTransDef>
+      <lword>an, æn, |an, æn, |02 Associate_in_Nursing 0 AN 0</lword>
+      <lTrans>an, æn, </lTrans>
+      <ldef>
+        <string>| an associate degree in nursing  </string>
+        <string>an, æn, </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>and, ænd, |</lword>
+      <lTrans>and, ænd, </lTrans>
+      <ldef />
+    </WordTransDef>
+    <WordTransDef>
+      <lword>another, ənʌðər, |</lword>
+      <lTrans>another, ənʌðər, </lTrans>
+      <ldef />
+    </WordTransDef>
+    <WordTransDef>
+      <lword>are, ɛər, |are, ɛər, |02 are 0 ar 0</lword>
+      <lTrans>are, ɛər, </lTrans>
+      <ldef>
+        <string>| a unit of surface area equal to 100 square meters  </string>
+        <string>are, ɛər, </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>area, ɛəriə, |area, ɛəriə, |06 sphere 0 domain 0 area 0 orbit 0 field 0 arena 0</lword>
+      <lTrans>area, ɛəriə, </lTrans>
+      <ldef>
+        <string>| a part of a structure having some specific characteristic or function; "the spacious cooking area provided plenty of room for servants"  </string>
+        <string>| the extent of a 2-dimensional surface enclosed within a boundary; "the area of a rectangle"; "it was about 500 square feet in area"  </string>
+        <string>| a part of an animal that has a special function or is supplied by a given artery or nerve; "in the abdominal region"  </string>
+        <string>| a subject of study; "it was his area of specialization"; "areas of interest include..."  </string>
+        <string>| a particular geographical region of indefinite boundary (usually serving some special purpose or distinguished by its people or culture or geography); "it was a mountainous area"; "Bible country"  </string>
+        <string>| a particular environment or walk of life; "his social sphere is limited"; "it was a closed area of employment"; "he's out of my orbit"  </string>
+        <string>area, ɛəriə, </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>around, əraund, |02 about 4 around 4</lword>
+      <lTrans>around, əraund, </lTrans>
+      <ldef>
+        <string>around, əraund, </string>
+        <string>| (of quantities) imprecise but fairly close to correct; "lasted approximately an hour"; "in just about a minute"; "he's about 30 years old"; "I've had about all I can stand"; "we meet about once a month"; "some forty people came"; "weighs around a hundred pounds"; "roughly $3,000"; "holds 3 gallons, more or less"; "20 or so people were at the party"  </string>
+        <string>| in circumference; "the trunk is ten feet around"; "the pond is two miles around"  </string>
+        <string>| in the area or vicinity; "a few spectators standing about"; "hanging around"; "waited around for the next flight"  </string>
+        <string>| from beginning to end; throughout; "It rains all year round on Skye"; "frigid weather the year around"  </string>
+        <string>| by a circular or circuitous route; "He came all the way around the base"; "the road goes around the pond"  </string>
+        <string>| in a circle or circular motion; "The wheels are spinning around"  </string>
+        <string>| all around or on all sides; "dirty clothes lying around (or about)"; "let's look about for help"; "There were trees growing all around"; "she looked around her"  </string>
+        <string>| to a particular destination either specified or understood; "she came around to see me"; "I invited them around for supper"  </string>
+        <string>| in or to a reversed position or direction; "about face"; "suddenly she turned around"  </string>
+        <string>| used of movement to or among many different places or in no particular direction; "wandering about with no place to go"; "people were rushing about"; "news gets around (or about)"; "traveled around in Asia"; "he needs advice from someone who's been around"; "she sleeps around"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>as, əz, |03 equally 1 as 0 every_bit 0</lword>
+      <lTrans>as, əz, </lTrans>
+      <ldef>
+        <string>| a United States territory on the eastern part of the island of Samoa  </string>
+        <string>| a very poisonous metallic element that has three allotropic forms; arsenic and arsenic compounds are used as herbicides and insecticides and various alloys; found in arsenopyrite and orpiment and realgar  </string>
+        <string>as, əz, </string>
+        <string>| to the same degree (often followed by `as'); "they were equally beautiful"; "birds were singing and the child sang as sweetly"; "sang as sweetly as a nightingale"; "he is every bit as mean as she is"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>ask, əsk, |09 necessitate 0 ask 0 postulate 0 need 0 require 0 take 0 involve 7 call_for 0 demand 0</lword>
+      <lTrans>ask, əsk, </lTrans>
+      <ldef>
+        <string>ask, əsk, </string>
+        <string>| make a request or demand for something to somebody; "She asked him for a loan"  </string>
+        <string>| consider obligatory; request and expect; "We require our secretary to be on time"; "Aren't we asking too much of these children?"; "I expect my students to arrive in time for their lessons"  </string>
+        <string>| inquire about; "I asked about their special today"; "He had to ask directions several times"  </string>
+        <string>| direct or put; seek an answer to; "ask a question"  </string>
+        <string>| address a question to and expect an answer from; "Ask your teacher about trigonometry"; "The children asked me about their dead grandmother"  </string>
+        <string>| require or ask for as a price or condition; "He is asking $200 for the table"; "The kidnappers are asking a million dollars in return for the release of their hostage"  </string>
+        <string>| require as useful, just, or proper; "It takes nerve to do what she did"; "success usually requires hard work"; "This job asks a lot of patience and skill"; "This position demands a lot of personal sacrifice"; "This dinner calls for a spectacular dessert"; "This intervention does not postulate a patient's consent"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>at, eit, |at, eit, |03 astatine 0 At 0 atomic_number_85 0</lword>
+      <lTrans>at, eit, </lTrans>
+      <ldef>
+        <string>| 100 at equal 1 kip in Laos  </string>
+        <string>| a highly unstable radioactive element (the heaviest of the halogen series); a decay product of uranium and thorium  </string>
+        <string>at, eit, </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>away, ɔːwei, |01 away a</lword>
+      <lTrans>away, ɔːwei, </lTrans>
+      <ldef>
+        <string>| (of a baseball pitch) on the far side of home plate from the batter; "the pitch was away (or wide)"; "an outside pitch"  </string>
+        <string>| used of an opponent's ground; "an away game"  </string>
+        <string>away, ɔːwei, </string>
+        <string>| from a particular thing or place or position (`forth' is obsolete); "ran away from the lion"; "wanted to get away from there"; "sent the children away to boarding school"; "the teacher waved the children away from the dead animal"; "went off to school"; "they drove off"; "go forth and preach"  </string>
+        <string>| from one's possession; "he gave out money to the poor"; "gave away the tickets"  </string>
+        <string>| in reserve; not for immediate use; "started setting aside money to buy a car"; "put something by for her old age"; "has a nest egg tucked away for a rainy day"  </string>
+        <string>| out of the way (especially away from one's thoughts); "brush the objections aside"; "pushed all doubts away"  </string>
+        <string>| out of existence; "the music faded away"; "tried to explain away the affair of the letter"- H.E.Scudder; "idled the hours away"; "her fingernails were worn away"  </string>
+        <string>| indicating continuing action; continuously or steadily; "he worked away at the project for more than a year"; "the child kept hammering away as if his life depended on it"  </string>
+        <string>| in a different direction; "turn aside"; "turn away one's face"; "glanced away"  </string>
+        <string>| in or into a proper place (especially for storage or safekeeping); "put the toys away"; "her jewels are locked away in a safe"; "filed the letter away"  </string>
+        <string>| at a distance in space or time; "the boat was 5 miles off (or away)"; "the party is still 2 weeks off (or away)"; "away back in the 18th century"  </string>
+        <string>| so as to be removed or gotten rid of; "cleared the mess away"; "the rotted wood had to be cut away"  </string>
+        <string>| freely or at will; "fire away!"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>back, bæk, |01 back 0</lword>
+      <lTrans>back, bæk, </lTrans>
+      <ldef>
+        <string>| (American football) the position of a player on a football team who is stationed behind the line of scrimmage  </string>
+        <string>| a support that you can lean against while sitting; "the back of the dental chair was adjustable"  </string>
+        <string>| the part of a garment that covers the back of your body; "they pinned a `kick me' sign on his back"  </string>
+        <string>| the protective covering on the front, back, and spine of a book; "the book had a leather binding"  </string>
+        <string>| the side that goes last or is not normally seen; "he wrote the date on the back of the photograph"  </string>
+        <string>| the posterior part of a human (or animal) body from the neck to the end of the spine; "his back was nicely tanned"  </string>
+        <string>| the series of vertebrae forming the axis of the skeleton and protecting the spinal cord; "the fall broke his back"  </string>
+        <string>| the part of something that is furthest from the normal viewer; "he stood at the back of the stage"; "it was hidden in the rear of the store"  </string>
+        <string>| (football) a person who plays in the backfield  </string>
+        <string>back, bæk, </string>
+        <string>| in or to or toward a past time; "set the clocks back an hour"; "never look back"; "lovers of the past looking fondly backward"  </string>
+        <string>| at or to or toward the back or rear; "he moved back"; "tripped when he stepped backward"; "she looked rearward out the window of the car"  </string>
+        <string>| in repayment or retaliation; "we paid back everything we had borrowed"; "he hit me and I hit him back"; "I was kept in after school for talking back to the teacher"  </string>
+        <string>| in or to or toward a former location; "she went back to her parents' house"  </string>
+        <string>| in or to or toward an original condition; "he went back to sleep"  </string>
+        <string>| in reply; "he wrote back three days later"  </string>
+        <string>| strengthen by providing with a back or backing  </string>
+        <string>| establish as valid or genuine; "Can you back up your claims?"  </string>
+        <string>| shift to a counterclockwise direction; "the wind backed"  </string>
+        <string>| place a bet on; "Which horse are you backing?"; "I'm betting on the new horse"  </string>
+        <string>| travel backward; "back into the driveway"; "The car backed up and hit the tree"  </string>
+        <string>| cause to travel backward; "back the car into the parking spot"  </string>
+        <string>| support financial backing for; "back this enterprise"  </string>
+        <string>| be behind; approve of; "He plumped for the Labor Party"; "I backed Kennedy in 1960"  </string>
+        <string>| give support or one's approval to; "I'll second that motion"; "I can't back this plan"; "endorse a new project"  </string>
+        <string>| be in back of; "My garage backs their yard"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>be, bi, |01 be 4</lword>
+      <lTrans>be, bi, </lTrans>
+      <ldef>
+        <string>| a light strong brittle grey toxic bivalent metallic element  </string>
+        <string>be, bi, </string>
+        <string>| spend or use time; "I may be an hour"  </string>
+        <string>| work in a specific place, with a specific subject, or in a specific function; "He is a herpetologist"; "She is our resident philosopher"  </string>
+        <string>| have an existence, be extant; "Is there a God?"  </string>
+        <string>| have the quality of being; (copula, used with an adjective or a predicate noun); "John is rich"; "This is not a good answer"  </string>
+        <string>| have life, be alive; "Our great leader is no more"; "My grandfather lived until the end of war"  </string>
+        <string>| be identical to; be someone or something; "The president of the company is John Smith"; "This is my house"  </string>
+        <string>| form or compose; "This money is my only income"; "The stone wall was the backdrop for the performance"; "These constitute my entire belonging"; "The children made up the chorus"; "This sum represents my entire income for a year"; "These few men comprise his entire army"  </string>
+        <string>| occupy a certain position or area; be somewhere; "Where is my umbrella?" "The toolshed is in the back"; "What is behind this behavior?"  </string>
+        <string>| be identical or equivalent to; "One dollar equals 1,000 rubles these days!"  </string>
+        <string>| represent, as of a character on stage; "Derek Jacobi was Hamlet"  </string>
+        <string>| be priced at; "These shoes cost $100"  </string>
+        <string>| to remain unmolested, undisturbed, or uninterrupted -- used only in infinitive form; "let her be"  </string>
+        <string>| happen, occur, take place; "I lost my wallet; this was during the visit to my parents' house"; "There were two hundred people at his funeral"; "There was a lot of noise in the kitchen"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>become, |02 become 3 suit 1</lword>
+      <lTrans>become, </lTrans>
+      <ldef>
+        <string>become, </string>
+        <string>| enter or assume a certain state or condition; "He became annoyed when he heard the bad news"; "It must be getting more serious"; "her face went red with anger"; "She went into ecstasy"; "Get going!"  </string>
+        <string>| come into existence; "What becomes has duration"  </string>
+        <string>| undergo a change or development; "The water turned into ice"; "Her former friend became her worst enemy"; "He turned traitor"  </string>
+        <string>| enhance the appearance of; "Mourning becomes Electra"; "This behavior doesn't suit you!"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>before, bfɔːr, |03 ahead 0 in_front 0 before 1</lword>
+      <lTrans>before, bfɔːr, </lTrans>
+      <ldef>
+        <string>before, bfɔːr, </string>
+        <string>| earlier in time; previously; "I had known her before"; "as I said before"; "he called me the day before but your call had come even earlier"; "her parents had died four years earlier"; "I mentioned that problem earlier"  </string>
+        <string>| at or in the front; "I see the lights of a town ahead"; "the road ahead is foggy"; "staring straight ahead"; "we couldn't see over the heads of the people in front"; "with the cross of Jesus marching on before"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>behind, biːhaind, |02 behind 4 slow 1</lword>
+      <lTrans>behind, biːhaind, </lTrans>
+      <ldef>
+        <string>| the fleshy part of the human body that you sit on; "he deserves a good kick in the butt"; "are you going to sit on your fanny and do nothing?"  </string>
+        <string>behind, biːhaind, </string>
+        <string>| in or to or toward the rear; "he followed behind"; "seen from behind, the house is more imposing than it is from the front"; "the final runners were far behind"  </string>
+        <string>| remaining in a place or condition that has been left or departed from; "when he died he left much unfinished work behind"; "left a large family behind"; "the children left their books behind"; "he took off with a squeal of tires and left the other cars far behind"  </string>
+        <string>| in debt; "he fell behind with his mortgage payments"; "a month behind in the rent"; "a company that has been run behindhand for years"; "in arrears with their utility bills"  </string>
+        <string>| in or into an inferior position; "fell behind in his studies"; "their business was lagging behind in the competition for customers"  </string>
+        <string>| of timepieces; "the clock is almost an hour slow"; "my watch is running behind"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>believe, biliːv, |02 believe 3 trust 2</lword>
+      <lTrans>geloven, houden voor, menen, </lTrans>
+      <ldef>
+        <string>geloven, houden voor, menen, </string>
+        <string>| accept as true; take to be true; "I believed his report"; "We didn't believe his stories from the War"; "She believes in spirits"  </string>
+        <string>| credit with veracity; "You cannot believe this man"; "Should we believe a publication like the National Enquirer?"  </string>
+        <string>| follow a credo; have a faith; be a believer; "When you hear his sermons, you will be able to believe, too"  </string>
+        <string>| judge or regard; look upon; judge; "I think he is very smart"; "I believe her to be very smart"; "I think that he is her boyfriend"; "The racist conceives such people to be inferior"  </string>
+        <string>| be confident about something; "I believe that he will come back from the war"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>best, bist, |05 outdo 1 outflank 0 trump 0 best 0 scoop 0</lword>
+      <lTrans>best, bist, </lTrans>
+      <ldef>
+        <string>| (superlative of `good') having the most positive qualities; "the best film of the year"; "the best solution"; "the best time for planting"; "wore his best suit"  </string>
+        <string>| the supreme effort one can make; "they did their best"  </string>
+        <string>| the person who is most outstanding or excellent; someone who tops all others; "he could beat the best of them"  </string>
+        <string>| Canadian physiologist (born in the United States) who assisted F. G. Banting in research leading to the discovery of insulin (1899-1978)  </string>
+        <string>best, bist, </string>
+        <string>| it would be sensible; "you'd best stay at home"  </string>
+        <string>| in a most excellent way or manner; "he played best after a couple of martinis"  </string>
+        <string>| from a position of superiority or authority; "father knows best"; "I know better."  </string>
+        <string>| get the better of; "the goal was to best the competition"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>better, betər, |02 better 0 break 0</lword>
+      <lTrans>better, betər, </lTrans>
+      <ldef>
+        <string>| (comparative of `good') superior to another (of the same class or set or kind) in excellence or quality or desirability or suitability; more highly skilled than another; "You're a better man than I am, Gunga Din"; "a better coat"; "a better type of car"; "a suit with a better fit"; "a better chance of success"; "produced a better mousetrap"; "she's better in math than in history"  </string>
+        <string>| (comparative of `good') changed for the better in health or fitness; "her health is better now"; "I feel better"  </string>
+        <string>| more than half; "argued for the better part of an hour"  </string>
+        <string>| something superior in quality or condition or effect; "a change for the better"  </string>
+        <string>| the superior one of two alternatives; "chose the better of the two"  </string>
+        <string>| a superior person having claim to precedence; "the common man has been kept in his place by his betters"  </string>
+        <string>| someone who bets  </string>
+        <string>better, betər, </string>
+        <string>| comparative of `well'; in a better or more excellent manner or more advantageously or attractively or to a greater degree etc.; "She had never sung better"; "a deed better left undone"; "better suited to the job"  </string>
+        <string>| from a position of superiority or authority; "father knows best"; "I know better."  </string>
+        <string>| get better; "The weather improved toward evening"  </string>
+        <string>| to make better; "The editor improved the manuscript with his changes"  </string>
+        <string>| surpass in excellence; "She bettered her own record"; "break a record"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>between, bitwiːn, |02 between 3 betwixt 0</lword>
+      <lTrans>between, bitwiːn, </lTrans>
+      <ldef>
+        <string>between, bitwiːn, </string>
+        <string>| in between; "two houses with a tree between"  </string>
+        <string>| in the interval; "dancing all the dances with little rest between"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>body, boudiː, |02 body 0 personify 1</lword>
+      <lTrans>body, boudiː, </lTrans>
+      <ldef>
+        <string>| the external structure of a vehicle; "the body of the car was badly rusted"  </string>
+        <string>| a resonating chamber in a musical instrument (as the body of a violin)  </string>
+        <string>| the property of holding together and retaining its shape; "wool has more body than rayon"; "when the dough has enough consistency it is ready to bake"  </string>
+        <string>| the main mass of a thing  </string>
+        <string>| the entire structure of an organism (an animal, plant, or human being); "he felt as if his whole body were on fire"  </string>
+        <string>| a natural object consisting of a dead animal or person; "they found the body in the lake"  </string>
+        <string>| the body excluding the head and neck and limbs; "they moved their arms and legs and bodies"  </string>
+        <string>| the central message of a communication; "the body of the message was short"  </string>
+        <string>| a group of persons associated by some common tie or occupation and regarded as an entity; "the whole body filed out of the auditorium"; "the student body"; "administrative body"  </string>
+        <string>| a collection of particulars considered as a system; "a body of law"; "a body of doctrine"; "a body of precedents"  </string>
+        <string>| an individual 3-dimensional object that has mass and that is distinguishable from other objects; "heavenly body"  </string>
+        <string>body, boudiː, </string>
+        <string>| invest with or as with a body; give body to  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>book, buk, |01 book 3</lword>
+      <lTrans>book, buk, </lTrans>
+      <ldef>
+        <string>| physical objects consisting of a number of pages bound together; "he used a large book as a doorstop"  </string>
+        <string>| a number of sheets (ticket or stamps etc.) bound together on one edge; "he bought a book of stamps"  </string>
+        <string>| a major division of a long written composition; "the book of Isaiah"  </string>
+        <string>| a written work or composition that has been published (printed on pages bound together); "I am reading a good book on economics"  </string>
+        <string>| the sacred writings of the Christian religions; "he went to carry the Word to the heathen"  </string>
+        <string>| the sacred writings of Islam revealed by God to the prophet Muhammad during his life at Mecca and Medina  </string>
+        <string>| a compilation of the known facts regarding something or someone; "Al Smith used to say, `Let's look at the record'"; "his name is in all the record books"  </string>
+        <string>| a written version of a play or other dramatic composition; used in preparing for a performance  </string>
+        <string>| a collection of rules or prescribed standards on the basis of which decisions are made; "they run things by the book around here"  </string>
+        <string>| a collection of playing cards satisfying the rules of a card game  </string>
+        <string>| a record in which commercial accounts are recorded; "they got a subpoena to examine our books"  </string>
+        <string>book, buk, </string>
+        <string>| engage for a performance; "Her agent had booked her for several concerts in Tokyo"  </string>
+        <string>| record a charge in a police register; "The policeman booked her when she tried to solicit a man"  </string>
+        <string>| arrange for and reserve (something for someone else) in advance; "reserve me a seat on a flight"; "The agent booked tickets to the show for the whole family"; "please hold a table at Maxim's"  </string>
+        <string>| register in a hotel booker  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>both, bɔθ, |</lword>
+      <lTrans>both, bɔθ, </lTrans>
+      <ldef />
+    </WordTransDef>
+    <WordTransDef>
+      <lword>boy, bɔi, |boy, bɔi, |02 son 0 boy 3</lword>
+      <lTrans>boy, bɔi, </lTrans>
+      <ldef>
+        <string>| (ethnic slur) offensive and disparaging term for Black man; "get out of my way, boy"  </string>
+        <string>| a friendly informal reference to a grown man; "he likes to play golf with the boys"  </string>
+        <string>| a youthful male person; "the baby was a boy"; "she made the boy brush his teeth every night"; "most soldiers are only boys in uniform"  </string>
+        <string>| a male human offspring; "their son became a famous judge"; "his boy is taller than he is"  </string>
+        <string>boy, bɔi, </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>bring, briŋ, |06 lend 1 impart 1 bestow 1 contribute 1 add 0 bring 2</lword>
+      <lTrans>bring, briŋ, </lTrans>
+      <ldef>
+        <string>bring, briŋ, </string>
+        <string>| bring into a different state; "this may land you in jail"  </string>
+        <string>| induce or persuade; "The confession of one of the accused brought the others to admit to the crime as well"  </string>
+        <string>| go or come after and bring or take back; "Get me those books over there, please"; "Could you bring the wine?"; "The dog fetched the hat"  </string>
+        <string>| be accompanied by; "Can I bring my cousin to the dinner?"  </string>
+        <string>| cause to come into a particular state or condition; "Long hard years of on the job training had brought them to their competence"; "bring water to the boiling point"  </string>
+        <string>| advance or set forth in court; "bring charges", "institute proceedings"  </string>
+        <string>| cause to happen or to occur as a consequence; "I cannot work a miracle"; "wreak havoc"; "bring comments"; "play a joke"; "The rain brought relief to the drought-stricken area"  </string>
+        <string>| attract the attention of; "The noise and the screaming brought the curious"  </string>
+        <string>| take something or somebody with oneself somewhere; "Bring me the box from the other room"; "Take these letters to the boss"; "This brings me to the main point"  </string>
+        <string>| be sold for a certain price; "The painting brought $10,000"; "The old print fetched a high price at the auction"  </string>
+        <string>| bestow a quality on; "Her presence lends a certain cachet to the company"; "The music added a lot to the play"; "She brings a special atmosphere to our meetings"; "This adds a light note to the program"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>business, biznəs, |business, biznəs, |03 clientele 0 patronage 0 business 1</lword>
+      <lTrans>business, biznəs, </lTrans>
+      <ldef>
+        <string>| incidental activity performed by an actor for dramatic effect; "his business with the cane was hilarious"  </string>
+        <string>| the principal activity in your life that you do to earn money; "he's not in my line of business"  </string>
+        <string>| the activity of providing goods and services involving financial and commercial and industrial aspects; "computers are now widely used in business"  </string>
+        <string>| the volume of commercial activity; "business is good today"; "show me where the business was today"  </string>
+        <string>| a rightful concern or responsibility; "it's none of your business"; "mind your own business"  </string>
+        <string>| an immediate objective; "gossip was the main business of the evening"  </string>
+        <string>| business concerns collectively; "Government and business could not agree"  </string>
+        <string>| a commercial or industrial enterprise and the people who constitute it; "he bought his brother's business"; "a small mom-and-pop business"; "a racially integrated business concern"  </string>
+        <string>| customers collectively; "they have an upper class clientele"  </string>
+        <string>business, biznəs, </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>but, bʌt, |05 merely 0 simply 0 just 0 only 2 but 1</lword>
+      <lTrans>but, bʌt, </lTrans>
+      <ldef>
+        <string>but, bʌt, </string>
+        <string>| and nothing more; "I was merely asking"; "it is simply a matter of time"; "just a scratch"; "he was only a child"; "hopes that last but a moment"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>by, biː, |02 by 0 past 0</lword>
+      <lTrans>by, biː, </lTrans>
+      <ldef>
+        <string>by, biː, </string>
+        <string>| in reserve; not for immediate use; "started setting aside money to buy a car"; "put something by for her old age"; "has a nest egg tucked away for a rainy day"  </string>
+        <string>| so as to pass a given point; "every hour a train goes past"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>call, kɔːl, |01 call 9</lword>
+      <lTrans>call, kɔːl, </lTrans>
+      <ldef>
+        <string>| the option to buy a given stock (or stock index or commodity future) at a given price before a given date  </string>
+        <string>| (sports) the decision made by an umpire or referee; "he was ejected for protesting the call"  </string>
+        <string>| a visit in an official or professional capacity; "the pastor's calls on his parishioners"; "the salesman's call on a customer"  </string>
+        <string>| a brief social visit; "senior professors' wives no longer make afternoon calls on newcomers"; "the characters in Henry James' novels are forever paying calls on each other, usually in the parlor of some residence"  </string>
+        <string>| a special disposition (as if from a divine source) to pursue a particular course; "he was disappointed that he had not heard the Call"  </string>
+        <string>| a telephone connection; "she reported several anonymous calls"; "he placed a phone call to London"; "he heard the phone ringing but didn't want to take the call"  </string>
+        <string>| an instruction that interrupts the program being executed; "Pascal performs calls by simply giving the name of the routine to be executed"  </string>
+        <string>| the characteristic sound produced by a bird; "a bird will not learn its song unless it hears it at an early age"  </string>
+        <string>| a loud utterance; often in protest or opposition; "the speaker was interrupted by loud cries from the rear of the audience"  </string>
+        <string>| a request; "many calls for Christmas stories"; "not many calls for buggywhips"  </string>
+        <string>| a demand especially in the phrase "the call of duty"  </string>
+        <string>| a demand for a show of hands in a card game; "after two raises there was a call"  </string>
+        <string>| a demand by a broker that a customer deposit enough to bring his margin up to the minimum requirement  </string>
+        <string>call, kɔːl, </string>
+        <string>| rouse somebody from sleep with a call; "I was called at 5 A.M. this morning"  </string>
+        <string>| consider or regard as being; "I would not call her beautiful"  </string>
+        <string>| challenge the sincerity or truthfulness of; "call the speaker on a question of fact"  </string>
+        <string>| utter in a loud voice or announce; "He called my name"; "The auctioneer called the bids"  </string>
+        <string>| order, summon, or request for a specific duty or activity, work, role; "He was already called 4 times for jury duty"; "They called him to active military duty"  </string>
+        <string>| order or request or give a command for; "The unions called a general strike for Sunday"  </string>
+        <string>| lure by imitating the characteristic call of an animal; "Call ducks"  </string>
+        <string>| get or try to get into communication (with someone) by telephone; "I tried to call you all night"; "Take two aspirin and call me in the morning"  </string>
+        <string>| order, request, or command to come; "She was called into the director's office"; "Call the police!"  </string>
+        <string>| declare in the capacity of an umpire or referee; "call a runner out"  </string>
+        <string>| challenge (somebody) to make good on a statement; charge with or censure for an offense; "He deserves to be called on that"  </string>
+        <string>| require the presentation of for redemption before maturation; "Call a bond"  </string>
+        <string>| utter a sudden loud cry; "she cried with pain when the doctor inserted the needle"; "I yelled to her from the window but she couldn't hear me"  </string>
+        <string>| make a prediction about; tell in advance; "Call the outcome of an election"  </string>
+        <string>| ascribe a quality to or give a name of a common noun that reflects a quality; "He called me a bastard"; "She called her children lazy and ungrateful"  </string>
+        <string>| utter a characteristic note or cry; "bluejays called to one another"  </string>
+        <string>| assign a specified (usually proper) proper name to; "They named their son David"; "The new school was named after the famous Civil Rights leader"  </string>
+        <string>| send a message or attempt to reach someone by radio, phone, etc.; make a signal to in order to transmit a message; "Hawaii is calling!"; "A transmitter in Samoa was heard calling"  </string>
+        <string>| read aloud to check for omissions or absentees; "Call roll"  </string>
+        <string>| indicate a decision in regard to; "call balls and strikes behind the plate"  </string>
+        <string>| give the calls (to the dancers) for a square dance  </string>
+        <string>| make a demand, as for a card or a suit or a show of hands; "He called his trump"  </string>
+        <string>| demand payment of (a loan); "Call a loan"  </string>
+        <string>| call a meeting; invite or command to meet; "The Wannsee Conference was called to discuss the `Final Solution'"; "The new dean calls meetings every week"  </string>
+        <string>| pay a brief visit; "The mayor likes to call on some of the prominent citizens"  </string>
+        <string>| make a stop in a harbour; "The ship will call in Honolulu tomorrow"  </string>
+        <string>| greet, as with a prescribed form, title, or name; "He always addresses me with `Sir'"; "Call me Mister"; "She calls him by first name"  </string>
+        <string>| stop or postpone because of adverse conditions, such as bad weather; "call a football game"  </string>
+      </ldef>
+    </WordTransDef>
+  </SessionLibrary>
+</WordTransDefLibrary>

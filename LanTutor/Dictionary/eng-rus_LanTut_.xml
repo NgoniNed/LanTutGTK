@@ -1,0 +1,363 @@
+<?xml version="1.0"?>
+<WordTransDefLibrary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SessionLibrary>
+    <WordTransDef>
+      <lword>ABC, eibiːsiː, |07 rudiment 0 first_rudiment 0 first_principle 0 alphabet 0 ABC 0 ABC's 0 ABCs 0</lword>
+      <lTrans>азбука, алфавит, </lTrans>
+      <ldef>
+        <string>| the elementary stages of any subject (usually plural); "he mastered only the rudiments of geometry"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Abyssinia, əbisiniə, |04 Ethiopia 0 Federal_Democratic_Republic_of_Ethiopia 0 Yaltopya 0 Abyssinia 0</lword>
+      <lTrans>Эфиопия, </lTrans>
+      <ldef>
+        <string>| Ethiopia is a republic in northeastern Africa on the Red Sea; formerly called Abyssinia  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Adam's apple, ədɑːmzæpl, |</lword>
+      <lTrans>адамово яблоко, </lTrans>
+      <ldef />
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Addis Ababa, ədaizæbəbə, |</lword>
+      <lTrans>Аддис‐Абеба, </lTrans>
+      <ldef />
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Aden, ədn, |01 Aden 0</lword>
+      <lTrans>Аден, </lTrans>
+      <ldef>
+        <string>| an important port of Yemen; located on the Gulf of Aden; its strategic location has made it a major trading center of southern Arabia since ancient times  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Afghanistan, æfgænistɑːn, |02 Afghanistan 0 Islamic_State_of_Afghanistan 0</lword>
+      <lTrans>Афганистан, </lTrans>
+      <ldef>
+        <string>| a mountainous landlocked country in central Asia; bordered by Iran to the west and Russia to the north and Pakistan to the east and south; "Soviet troops invaded Afghanistan in 1979"  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Africa, æfrikə, |01 Africa 0</lword>
+      <lTrans>Африка, </lTrans>
+      <ldef>
+        <string>| the second largest continent; located to the south of Europe and bordered to the west by the South Atlantic and to the east by the Indian Ocean  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>African, æfrikən, |01 African 0</lword>
+      <lTrans>африканец, </lTrans>
+      <ldef>
+        <string>| of or relating to the nations of Africa or their peoples; "African languages"  </string>
+        <string>| a native or inhabitant of Africa  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>African woman, æfrikənwumən, |</lword>
+      <lTrans>африканка, </lTrans>
+      <ldef />
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Albania, ælbeiniə, |02 Albania 0 Republic_of_Albania 0</lword>
+      <lTrans>Албания, </lTrans>
+      <ldef>
+        <string>| a republic in southeastern Europe on the Adriatic coast of the Balkan Peninsula  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Algeria, ældʒiəriə, |03 Algeria 0 Algerie 0 Democratic_and_Popular_Republic_of_Algeria 0</lword>
+      <lTrans>Алжир, </lTrans>
+      <ldef>
+        <string>| a republic in northwestern Africa on the Mediterranean Sea with a population that is predominantly Sunni Muslim; colonized by France in the 19th century but gained autonomy in the early 1960s  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Algiers, ælgiz, |02 Algiers 0 Algerian_capital 0</lword>
+      <lTrans>Алжир, </lTrans>
+      <ldef>
+        <string>| an ancient port on the Mediterranean; the capital and largest city of Algeria  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Alps, ælps, |02 Alps 0 the_Alps 0</lword>
+      <lTrans>Альпы, </lTrans>
+      <ldef>
+        <string>| a large mountain system in south-central Europe; scenic beauty and winter sports make them a popular tourist attraction  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Altai, ɔːltai, |</lword>
+      <lTrans>Алтай, </lTrans>
+      <ldef />
+    </WordTransDef>
+    <WordTransDef>
+      <lword>America, əmerikə, |01 America 0</lword>
+      <lTrans>Америка, </lTrans>
+      <ldef>
+        <string>| North American republic containing 50 states - 48 conterminous states in North America plus Alaska in northwest North America and the Hawaiian Islands in the Pacific Ocean; achieved independence in 1776  </string>
+        <string>| North America and South America and Central America  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>American, əmerikən, |01 American 0</lword>
+      <lTrans>американец, </lTrans>
+      <ldef>
+        <string>| of or relating to or characteristic of the continents and islands of the Americas; "the American hemisphere"; "American flora and fauna"  </string>
+        <string>| of or relating to the United States of America or its people or language or culture; "American citizens"; "American English"; "the American dream"  </string>
+        <string>| the English language as used in the United States  </string>
+        <string>| a native or inhabitant of a North American or Central American or South American country  </string>
+        <string>| a native or inhabitant of the United States  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>American woman, əmerikənwumən, |</lword>
+      <lTrans>американка, </lTrans>
+      <ldef />
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Amsterdam, æmstədæm, |03 Amsterdam 0 Dutch_capital 0 capital_of_The_Netherlands 0</lword>
+      <lTrans>Амстердам, </lTrans>
+      <ldef>
+        <string>| an industrial center and the nominal capital of the Netherlands; center of the diamond-cutting industry; seat of an important stock exchange; known for its canals and art museum  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Amudaryra, əmjuːdərirə, |</lword>
+      <lTrans>Амударья, </lTrans>
+      <ldef />
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Amur, əmʌr, |04 Amur 0 Amur_River 0 Heilong_Jiang 0 Heilong 0</lword>
+      <lTrans>Амур, </lTrans>
+      <ldef>
+        <string>| an Asian river between China and Russia; flows into the Sea of Okhotsk  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Angola, æŋgoulə, |02 Angola 0 Republic_of_Angola 0</lword>
+      <lTrans>Ангола, </lTrans>
+      <ldef>
+        <string>| a republic in southwestern Africa on the Atlantic Ocean; achieved independence from Portugal in 1975 and was the scene of civil war until 1990  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Angora, æŋgɔːrə, |04 Ankara 0 Turkish_capital 0 capital_of_Turkey 0 Angora 0</lword>
+      <lTrans>Анкара, </lTrans>
+      <ldef>
+        <string>| a long-haired breed of cat similar to the Persian cat  </string>
+        <string>| domestic breed of rabbit with long white silky hair  </string>
+        <string>| a domestic breed of goat raised for its long silky hair which is the true mohair  </string>
+        <string>| the capital of Turkey; located in west-central Turkey; it was formerly known as Angora and is the home of Angora goats  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Ankara, æŋkərə, |04 Ankara 0 Turkish_capital 0 capital_of_Turkey 0 Angora 0</lword>
+      <lTrans>Анкара, </lTrans>
+      <ldef>
+        <string>| the capital of Turkey; located in west-central Turkey; it was formerly known as Angora and is the home of Angora goats  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Antarctic, æntɑːktik, |03 Antarctic 0 Antarctic_Zone 0 South_Frigid_Zone 0</lword>
+      <lTrans>Антарктика, </lTrans>
+      <ldef>
+        <string>| at or near the south pole  </string>
+        <string>| the region around the south pole: Antarctica and surrounding waters  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Antwerp, æntwəːp, |03 Antwerpen 0 Antwerp 0 Anvers 0</lword>
+      <lTrans>Антверпен, </lTrans>
+      <ldef>
+        <string>| a busy port and financial center in northern Belgium on the Scheldt river; it has long been a center for the diamond industry and the first stock exchange was opened there in 1460  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>April, eiprəl, |02 April 0 Apr 0</lword>
+      <lTrans>апрель, </lTrans>
+      <ldef>
+        <string>| the month following March and preceding May  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Arab, ærəb, |02 Arab 0 Arabian 0</lword>
+      <lTrans>араб, </lTrans>
+      <ldef>
+        <string>| a spirited graceful and intelligent riding horse native to Arabia  </string>
+        <string>| a member of a Semitic people originally from the Arabian peninsula and surrounding territories who speaks Arabic and who inhabits much of the Middle East and northern Africa  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Arabia, əreibiə, |02 Arabian_Peninsula 0 Arabia 0</lword>
+      <lTrans>Арабия, </lTrans>
+      <ldef>
+        <string>| a peninsula between the Red Sea and the Persian Gulf; strategically important for its oil resources  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Arabian, əreibiən, |02 Arab 0 Arabian 0</lword>
+      <lTrans>арабский, </lTrans>
+      <ldef>
+        <string>| of or relating to Arabian horses  </string>
+        <string>| relating to or associated with Arabia or its people; "Arabian Nights"; "Arabian Sea"  </string>
+        <string>| a spirited graceful and intelligent riding horse native to Arabia  </string>
+        <string>| a member of a Semitic people originally from the Arabian peninsula and surrounding territories who speaks Arabic and who inhabits much of the Middle East and northern Africa  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Arabian woman, əreibiənwumən, |</lword>
+      <lTrans>арабка, </lTrans>
+      <ldef />
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Arabic, ærəbik, |02 Arabic 0 Arabic_language 0</lword>
+      <lTrans>арабский, </lTrans>
+      <ldef>
+        <string>| relating to or characteristic of Arabs; "Arabic languages"  </string>
+        <string>| the Semitic language of the Arabs; spoken in a variety of dialects  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Aral Sea, |</lword>
+      <lTrans>Аральское море, </lTrans>
+      <ldef />
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Archangel, |03 garden_angelica 0 archangel 0 Angelica_Archangelica 0</lword>
+      <lTrans>Архангельск, </lTrans>
+      <ldef>
+        <string>| an angel ranked above the highest rank in the celestial hierarchy  </string>
+        <string>| a biennial cultivated herb; its stems are candied and eaten and its roots are used medicinally  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Argentina, ɑːdʒəntiːnə, |02 Argentina 0 Argentine_Republic 0</lword>
+      <lTrans>Аргентина, </lTrans>
+      <ldef>
+        <string>| type genus of the Argentinidae: argentines  </string>
+        <string>| a republic in southern South America; second largest country in South America  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Armenia, ɑːməniə, |03 Armenia 0 Republic_of_Armenia 0 Hayastan 0</lword>
+      <lTrans>Армения, </lTrans>
+      <ldef>
+        <string>| a landlocked republic in southwestern Asia; formerly an Asian soviet; modern Armenia is but a fragment of ancient Armenia which was one of the world's oldest civilizations; throughout 2500 years the Armenian people have been invaded and oppressed by their neighbors  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Arnhem, ɑːnəm, |01 Arnhem 0</lword>
+      <lTrans>Арнем, </lTrans>
+      <ldef>
+        <string>| a city in the central Netherlands on the lower Rhine River; site of a battle in 1944 during World War II  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Asia, əʃiə, |01 Asia 0</lword>
+      <lTrans>Азия, </lTrans>
+      <ldef>
+        <string>| the nations of the Asian continent collectively  </string>
+        <string>| the largest continent with 60% of the earth's population; it is joined to Europe on the west to form Eurasia; it is the site of some of the world's earliest civilizations  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Asian, əʃiən, |02 Asian 0 Asiatic 0</lword>
+      <lTrans>азиат, </lTrans>
+      <ldef>
+        <string>| of or relating to or characteristic of Asia or the peoples of Asia or their languages or culture; "Asian countries"  </string>
+        <string>| a native or inhabitant of Asia  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Asian woman, əʃiənwumən, |</lword>
+      <lTrans>азиатка, </lTrans>
+      <ldef />
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Asiatic, eiʃiætik, |02 Asian 0 Asiatic 0</lword>
+      <lTrans>азиатский, </lTrans>
+      <ldef>
+        <string>| of or relating to or characteristic of Asia or the peoples of Asia or their languages or culture; "Asian countries"  </string>
+        <string>| a native or inhabitant of Asia  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Athena, əðnə, |05 Athena 0 Athene 0 Pallas 0 Pallas_Athena 0 Pallas_Athene 0</lword>
+      <lTrans>Афины, </lTrans>
+      <ldef>
+        <string>| (Greek mythology) goddess of wisdom and useful arts and prudent warfare; guardian of Athens; identified with Roman Minerva  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Athene, əðn, |05 Athena 0 Athene 0 Pallas 0 Pallas_Athena 0 Pallas_Athene 0</lword>
+      <lTrans>Афины, </lTrans>
+      <ldef>
+        <string>| a genus of Strigidae  </string>
+        <string>| (Greek mythology) goddess of wisdom and useful arts and prudent warfare; guardian of Athens; identified with Roman Minerva  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Athenian, əθiːniən, |01 Athenian 0</lword>
+      <lTrans>афинский, </lTrans>
+      <ldef>
+        <string>| of or relating to or characteristic of Athens or its inhabitants  </string>
+        <string>| a resident of Athens  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Athens, æθinz, |01 Athens 2</lword>
+      <lTrans>Афины, </lTrans>
+      <ldef>
+        <string>| the capital and largest city of Greece; named after Athena (its patron goddess); "in the 5th century BC ancient Athens was the world's most powerful and civilized city"  </string>
+        <string>| a university town in northeast Georgia  </string>
+        <string>| a town in southeast Ohio  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Atlantic, ætlæntik, |02 Atlantic 0 Atlantic_Ocean 0</lword>
+      <lTrans>Атлантический океан, </lTrans>
+      <ldef>
+        <string>| relating to or bordering the Atlantic Ocean; "Atlantic currents"  </string>
+        <string>| the 2nd largest ocean; separates North and South America on the west from Europe and Africa on the east  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Atlantic Ocean, ætlæntikouʃən, |</lword>
+      <lTrans>Атлантический океан, </lTrans>
+      <ldef />
+    </WordTransDef>
+    <WordTransDef>
+      <lword>August, ɔːgəst, |02 August 0 Aug 0</lword>
+      <lTrans>август, </lTrans>
+      <ldef>
+        <string>| profoundly honored; "revered holy men"  </string>
+        <string>| of or befitting a lord; "heir to a lordly fortune"; "of august lineage"  </string>
+        <string>| the month following July and preceding September  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Australia, ɔstreiliə, |01 Australia 0</lword>
+      <lTrans>Австралия, </lTrans>
+      <ldef>
+        <string>| a nation occupying the whole of the Australian continent; Aboriginal tribes are thought to have migrated from southeastern Asia 20,000 years ago; first Europeans were British convicts sent there as a penal colony  </string>
+        <string>| the smallest continent; between the South Pacific and the Indian Ocean  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Australian, ɔstreiliən, |02 Australian 0 Aussie 0</lword>
+      <lTrans>австралиец, </lTrans>
+      <ldef>
+        <string>| of or relating to or characteristic of Australia or its inhabitants or its languages; "Australian deserts"; "Australian aborigines"  </string>
+        <string>| the Austronesian languages spoken by Australian aborigines  </string>
+        <string>| a native or inhabitant of Australia  </string>
+      </ldef>
+    </WordTransDef>
+    <WordTransDef>
+      <lword>Australian woman, ɔstreiliənwumən, |</lword>
+      <lTrans>австралийка, </lTrans>
+      <ldef />
+    </WordTransDef>
+  </SessionLibrary>
+</WordTransDefLibrary>

@@ -8,8 +8,6 @@ namespace LanTutor
 {
     public static class LTReadFile
     {
-        //const string dictfile = "/Volumes/Secondary/Projects/PersonalGTK/LanTutor/LanTutor/EnglishDictionaries";
-
         public static List<object> ReadFile(string lsourcefilename)
         {
             List<object> loadedData = new List<object>();
@@ -24,22 +22,6 @@ namespace LanTutor
         {
             return Directory.GetFiles(EnglishTranslationDictsPath);
         }
-        /*public static bool FindDictionariesFolder
-        {
-            get
-            {
-                return Directory.Exists(Environment.CurrentDirectory+"/");
-            }
-             
-        }
-        public static int NumberOfAvailableDictionaries
-        {
-            get
-            {
-                return Directory.GetFiles(dictfile).Length;
-            }
-            
-        }*/
         /// <summary>
         /// pulls the file information from the specified file path
         /// </summary>
@@ -67,11 +49,6 @@ namespace LanTutor
             {
                 SessionLibrary = new List<WordTransDef>(),
             };
-            //List<WordTransDef> wordTransObject = new List<WordTransDef>();
-            //List<string> wordFormList = new List<string>();
-            //List<string> wordSenseList = new List<string>();
-            //FileStream lfileStream = (dictfilePath);
-            //lfileStream.GetAccessControl();
             XmlDocument xmlDocument = new XmlDocument();
             xmlDocument.Load(dictfilePath);
             int loadedwords = 0;
@@ -86,7 +63,6 @@ namespace LanTutor
                 }
                 else
                 {
-                    //System.Console.WriteLine(wordEntry.ChildNodes.Count);
                     XmlNode formNode = wordEntry.FirstChild;
                     XmlNode senseNode = wordEntry.LastChild;
                     StringBuilder formBuilder = new StringBuilder();
@@ -119,13 +95,8 @@ namespace LanTutor
                         },
                     });
 
-                    //bool printdone = lSessionlibrary.SessionLibrary[lSessionlibrary.SessionLibrary.Count -1].PrintInfo;
-                    //wordFormList.Add(formBuilder.ToString());
-                    //wordSenseList.Add(senseBuilder.ToString());
                     if (loadedwords.Equals(wordlimit))
                     {
-                        //System.Console.WriteLine("Word Forms\t" + wordFormList.Count+"\t"+wordFormList[1]);
-                        //System.Console.WriteLine("Word Sense\t" + wordSenseList.Count + "\t" + wordSenseList[1]);
                         break;
                     }
                     else
@@ -134,14 +105,6 @@ namespace LanTutor
                     }
                 }
             }
-            //update the return variable so at to use wordtransdef data type
-            /*SessionWordSet wordSet = new SessionWordSet()
-            {
-                motherTongue = wordFormList,
-                foreignTongue = wordSenseList
-            };
-            */
-            
             return lSessionlibrary;
         }
 
@@ -157,7 +120,6 @@ namespace LanTutor
                 document.Load(lfile);
                 XmlNodeList wordDefList = document.LastChild.FirstChild.ChildNodes;
                 //partially fill the wordObject struct
-                
                 foreach(XmlNode wordData in wordDefList)
                 {
                     int ii = 0;
@@ -168,22 +130,17 @@ namespace LanTutor
                         if(ii.Equals(0))
                         {
                             wordLoaded.lword = wordinfo.InnerText;
-                            //Console.Write(wordinfo.InnerText + "\t=>\t");
                         }
                         else if(ii.Equals(1))
                         {
                             wordLoaded.lwordDescription= wordinfo.InnerText;
-                            //Console.Write(wordinfo.InnerText);
                         }
                         ii++;
                     }
                     //add the wordobject into the session library list
                     wordObjectList.Add(wordLoaded);
-                    //Console.WriteLine();
                 }
-                //each wordObject represents each wordData node
-                //therefor number of wordObjects created should be equal to wordData nodes
-                //Console.WriteLine(wordDefList.Count+"\t==>>\t"+wordObjectList.Count);
+                
                 Console.WriteLine(lfile+"\t"+ wordDefList.Count);
                 
             }

@@ -4,7 +4,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">anycpu</Platform>
     <ProjectGuid>{7676EEF4-2831-441A-9857-DBA46ED022AA}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>LanTutor</RootNamespace>
     <AssemblyName>LanTutor</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -17,6 +17,7 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\LanTutorDocumentation.xml</DocumentationFile>
     <IntermediateOutputPath>obj\anycpu\Debug</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|anycpu' ">
@@ -45,8 +46,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="gtk-gui\generated.cs" />
-    <Compile Include="MainWindow.cs" />
-    <Compile Include="gtk-gui\MainWindow.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LTReadFile.cs" />
@@ -54,6 +53,7 @@
     <Compile Include="LTPhaseOneCore.cs" />
     <Compile Include="LTScoreCard.cs" />
     <Compile Include="LanTutorXMLMoving.cs" />
+    <Compile Include="LTGUIDesign.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ProgramRequirements.txt" />
@@ -75,6 +75,9 @@
     </None>
     <None Include="bin\Debug\ReportCards\ngoni_ReportCard.xml">
       <Link>ReportCards\ngoni_ReportCard.xml</Link>
+    </None>
+    <None Include="GUIResources\LanTut.png">
+      <Link>ReportCards\GUIResources\LanTut.png</Link>
     </None>
   </ItemGroup>
   <ItemGroup>

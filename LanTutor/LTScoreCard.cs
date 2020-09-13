@@ -3,19 +3,6 @@ using System.Xml.Serialization;
 using System.Collections.Generic;
 namespace LanTutor
 {
-    /*public struct SessionWordSet
-    {
-        public List<string> motherTongue
-        {
-            get;
-            set;
-        }
-        public List<string> foreignTongue
-        {
-            get;
-            set;
-        }
-    }*/
     [Serializable]
     public struct LTSessionScoreCard
     {
@@ -150,7 +137,6 @@ namespace LanTutor
     [Serializable]
     public struct WordDictObject
     {
-        //[XmlAttribute(AttributeName="Mother Tongue")]
         public string lword { get; set; }
         public List<string> lwordDescription { get; set; }
         public string frgnWord { get; set; }
@@ -161,16 +147,10 @@ namespace LanTutor
     [Serializable]
     public struct WordObject
     {
-        //[XmlAttribute(AttributeName="Mother Tongue")]
         public string lword { get; set; }
         public string lwordDescription { get; set; }
         public WordScoreCard frgnWord { get; set; }
         public WordScoreCard localWorddiscrp { get; set; }
-        //[XmlIgnore]
-        /*public void addDescription(string discr)
-        {
-            lwordDescription.Add(discr);
-        }*/
     }
     [Serializable]
     public struct WordScoreCard

@@ -1,48 +1,13 @@
 ﻿using System.Collections.Generic;
 using System;
 using System.IO;
+using System.Xml;
 
 namespace LanTutor
 {
     public static class LTPhaseOneCore
     {
-        /*
-        public object frgnWord
-        {
-            get;
-            private set;
-        }
-        public object frgnWordDescription
-        {
-            get;
-            private set;
-        }
-        public object mthrLangWord
-        {
-            get;
-            private set;
-        }
-        public object frgnWordScore
-        {
-            get;
-            private set;
-        }
-        public object frgnWordDescriptionScore
-        {
-            get;
-            private set;
-        }
-        public object practiceTimelapsed
-        {
-            get;
-            private set;
-        }
-        
-        public LTPhaseOneCore()
-        {
-        }*/
-
-        internal static void ExecuteProgramBackend()
+        internal static XmlNodeList ExecuteProgramBackend()
         {
             if (!(Directory.Exists(Environment.CurrentDirectory + "/ReportCards")) || (Directory.GetFiles(Environment.CurrentDirectory + "/ReportCards").Length <= 0))
             {
@@ -50,21 +15,23 @@ namespace LanTutor
             }
             else
             {
+                Gtk.Window dWindow = new Gtk.Window("Dialog");
+                Gtk.MessageDialog dialog = new Gtk.MessageDialog(dWindow, Gtk.DialogFlags.Modal, Gtk.MessageType.Warning, Gtk.ButtonsType.Ok, "Envirnment Is Ready");
+                dialog.SetSizeRequest(400, 200);
+                dialog.WindowPosition = Gtk.WindowPosition.Center;
+                dialog.Run();
+                dialog.Destroy();
+
                 Console.WriteLine("Environment Is Ready...\n Preparing session");
             }
-            //
-            //get the reportcard of current user
-            //load question for user
-            /*
-             * lantutxmlmoving
-             *      loadxmlfile
-             *      getall the session questions
-             *      getcurrentquestion
-             */
-            System.Xml.XmlNodeList nodeList = LanTutorXMLMoving.LoadSessionQuestions(LanTutorXMLMoving.LoadXMLFile(Directory.GetFiles(Environment.CurrentDirectory + "/ReportCards")[0]), "WordTransDefLibrary/SessionLibrary/WordTransDef");
-            Console.WriteLine(nodeList.Count);
-            WordTransDef currentQuestion = LanTutorXMLMoving.GetCurrentQuestionl(5, ref nodeList);
-            bool userQ = currentQuestion.PrintInfo;
+            
+            //XmlNodeList nodeList =
+            return  LanTutorXMLMoving.LoadSessionQuestions(LanTutorXMLMoving.LoadXMLFile(Directory.GetFiles(Environment.CurrentDirectory + "/ReportCards")[0]), "WordTransDefLibrary/SessionLibrary/WordTransDef");
+            //Console.WriteLine(nodeList.Count);
+            //int qNum = 5;
+            //GetQuestion(nodeList, 1);
+
+            //bool userQ = currentQuestion.PrintInfo;
             /*/update score parameters
             currentQuestion.lWordScore = new ScoreParameters()
             {
@@ -78,7 +45,7 @@ namespace LanTutor
                 Score = 2,
                 TimeSpent = "10"
             };
-            userQ = currentQuestion.PrintInfo;*/
+            userQ = currentQuestion.PrintInfo;
             //get previous question
             currentQuestion = LanTutorXMLMoving.GetPreviousQuestionl(5, ref nodeList);
             userQ = currentQuestion.PrintInfo;
@@ -109,22 +76,22 @@ namespace LanTutor
              * flush usersessionreportcard to file
              *      over write the whole reportcard
              */
-            Console.WriteLine(Directory.GetFiles(Environment.CurrentDirectory + "/ReportCards")[0]);
-            LTWriteFile.WriteNodeListToXml(Directory.GetFiles(Environment.CurrentDirectory + "/ReportCards")[0], nodeList);
+            //Console.WriteLine(Directory.GetFiles(Environment.CurrentDirectory + "/ReportCards")[0]);
+            //LTWriteFile.WriteNodeListToXml(Directory.GetFiles(Environment.CurrentDirectory + "/ReportCards")[0], nodeList);
             //LTPhaseOneCore.DataPrep();
             /*
              * load LanTut dictionary in memory
              * prepare LTScoreCard for the current session
              * save session scorecardreport to file
              */
-            //string[] lfiles = Directory.GetFiles("/Volumes/Secondary/Projects/PersonalGTK/LanTutor/LanTutor/Dictionary/");
-            /*string lusername = "Ngoni1";
-            
+            /*/string[] lfiles = Directory.GetFiles("/Volumes/Secondary/Projects/PersonalGTK/LanTutor/LanTutor/Dictionary/");
+            string lusername = "Ngoni1";
+
             string dict = "eng-rus_LanTut_.xml";
             Console.Clear();
             Console.WriteLine("New Session");
             //PrepareUserReportCard(lmainDirectory,lusername);
-            /*XmlNodeList mySessionLists = LanTutorXMLMoving.LoadSessionQuestions(LanTutorXMLMoving.LoadXMLFile(lmainDirectory+"/ReportCards/Ngoni_ReportCard.xml"));
+            XmlNodeList mySessionLists = LanTutorXMLMoving.LoadSessionQuestions(LanTutorXMLMoving.LoadXMLFile(lmainDirectory+"/ReportCards/Ngoni_ReportCard.xml"));
             
             Console.WriteLine(mySessionLists.Count);
             int ii = 1;
@@ -144,9 +111,17 @@ namespace LanTutor
             */
         }
 
+        internal static void GetQuestion(ref XmlNodeList nodeList, int qNum)
+        {
+            WordTransDef currentQuestion = LanTutorXMLMoving.GetCurrentQuestionl(qNum, ref nodeList);
+
+            LTGUIDesign.UpdateMotherTongueView(currentQuestion.lword);
+            LTGUIDesign.UpdateTranslationView(currentQuestion.lTrans);
+            LTGUIDesign.UpdateDescriptionView(currentQuestion.ldef);
+        }
+
         internal static void LanTutEnvironmentSetup()
         {
-
             //get the main working directory
             string lmainDirectory = Environment.CurrentDirectory;
             //create folder for holding english .xml processed dictionaries
@@ -157,22 +132,10 @@ namespace LanTutor
              * move tei translation dictionaries to lantutdictionaries
              */
             WordTransDefLibrary llibrary = DataPrep(LTReadFile.GetTranslationDictionaries(lmainDirectory + "/LanTutDictionaries")[0], LTReadFile.LoadDefinations(lmainDirectory+ "/EnglishDictionaries"));
-            /*foreach(WordTransDef wordObj in llibrary.SessionLibrary)
-            {
-                bool wd = wordObj.PrintInfo;
-            }*/
-            //break;
-            /*write the pack to file.xml
-             * 
-            string fname = LTReadFile.GetDictionaryFileInfo(lfile).Name;
-            fname = fname.Substring(0, fname.IndexOf('.'));
-            */
+            
             //create the report cards folder
             Directory.CreateDirectory(lmainDirectory + "/ReportCards");
             LTWriteFile.WriteSchemeToxml(llibrary, "/ngoni" + "_ReportCard.xml", lmainDirectory + "/ReportCards");
-
-            //Console.WriteLine();
-
         }
 
         public static LTSessionScoreCard GenerateSessionScoreCard(string lfiles)
@@ -185,48 +148,33 @@ namespace LanTutor
             List<WordTransDefDict> sessionObjList = new List<WordTransDefDict>();
             foreach (System.Xml.XmlNode lWordTransDef in document.LastChild.FirstChild.ChildNodes)
             {
-                //XmlNodeList dataGroup = lWordTransDef.ChildNodes;
                 List<string> defList = new List<string>();
-                //Console.WriteLine("========");
                 WordTransDefDict dictObject = new WordTransDefDict();
                 int ii = 0;
                 foreach (System.Xml.XmlNode dataGroup in lWordTransDef.ChildNodes)
                 {
-
-                    //if childnodes exist add text infor to string list
-                    //else retrieve the text node
                     if (ii == 0)
                     {
-                        //Console.WriteLine(dataGroup.InnerText);
                         dictObject.lword = dataGroup.InnerText;
-
                     }
                     if (ii == 1)
                     {
-                        //Console.WriteLine(dataGroup.InnerText);
                         dictObject.lTrans = dataGroup.InnerText;
                     }
                     if (ii == 2)
                     {
-                        //Console.WriteLine(dataGroup.HasChildNodes);
-                        //Console.WriteLine(dataGroup.ChildNodes.Count);
                         foreach (System.Xml.XmlNode node in dataGroup.ChildNodes)
                         {
                             defList.Add(node.InnerText);
-                            //Console.WriteLine(node.InnerText);
                         }
-                        //dictObject.lword = dataGroup.InnerText;
                     }
                     ii++;
-
                 }
 
                 dictObject.ldef = defList;
                 dictObject.lDescriptionScore = DefaultScores();
                 dictObject.lWordScore = DefaultScores();
-                //place in session library
                 sessionObjList.Add(dictObject);
-                //Console.WriteLine("========");
             }
             mysession.SessionLibrary = sessionObjList;
             return mysession;
@@ -278,28 +226,12 @@ namespace LanTutor
 
         private static WordTransDefLibrary PrepareSessionLibrary(List<WordObject> myset, string lfile)
         {
-            //sessionwordset type to should be replaced by wordtransdict datatype
-            //SessionWordSet sws = 
-
             //load the translations and words from file
             WordTransDefLibrary lwordTransDefLibrary = LTReadFile.LoadDictionary(lfile, 0, 50);
             Console.WriteLine(lwordTransDefLibrary.SessionLibrary.Count);
-            //wordTransDefLibrary.SessionLibrary = new List<WordTransDef>();
-
             //link the definations to the translations-words
-            //for (int ii = 0; ii < sws.foreignTongue.Count; ii++)
-
-
             for (int ii = 0; ii < lwordTransDefLibrary.SessionLibrary.Count; ii++)
             {
-
-                //WordTransDef wordDataPack = new WordTransDef();
-                //Console.WriteLine(lwordTransDefLibrary.SessionLibrary[ii].lword.Substring(0, (lwordTransDefLibrary.SessionLibrary[ii].lword.IndexOf(","))));
-
-                //string tmp = sws.motherTongue[ii].Substring(0, (sws.motherTongue[ii].IndexOf(",")));
-                //List<string> currentWordDeffs = new List<string>();
-                //string currentWord = string.Empty;
-                
                 foreach (WordObject Dictword in myset)
                 {
                     if (System.Text.RegularExpressions.Regex.IsMatch(Dictword.lword, "\\s" + lwordTransDefLibrary.SessionLibrary[ii].lword.Substring(0, (lwordTransDefLibrary.SessionLibrary[ii].lword.IndexOf(","))) + "\\s", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
@@ -307,19 +239,8 @@ namespace LanTutor
 
                         lwordTransDefLibrary.SessionLibrary[ii].Updatelword(Dictword.lword);
                         lwordTransDefLibrary.SessionLibrary[ii].Updateldef(Dictword.lwordDescription);
-                        //Console.WriteLine("Match Found ::/t"+Dictword.lword+"\t"+ lwordTransDefLibrary.SessionLibrary[ii].lword.Substring(0, (lwordTransDefLibrary.SessionLibrary[ii].lword.IndexOf(","))));
-                        //currentWordDeffs.Add(Dictword.lwordDescription);
                     }
-
                 }
-                /*
-                wordDataPack.ldef = currentWordDeffs;
-                wordDataPack.lTrans = sws.foreignTongue[ii];
-                wordDataPack.lword = sws.motherTongue[ii] + "|" + currentWord;
-                wordTransDefLibrary.SessionLibrary.Add(wordDataPack);
-                //bool test = wordDataPack.PrintInfo;
-                */
-
             }
 
             return lwordTransDefLibrary;
@@ -366,23 +287,21 @@ namespace LanTutor
         {
             return LTReadFile.ReadFile(lSourceFileName);
         }
-        
-        /// <summary>
-        /// Writes the Score card to file given the file name and scorecard report
-        /// </summary>
-        /// <param name="lScoreCardName"></param>
-        public static void WriteScoreCardTo(string lScoreCardName,object lScoreCardReport)
+        public static string[] GetListOfTranslationOptions
         {
-            //LTWriteFile.WriteScoreCard(lScoreCardName,lScoreCardReport);
-        }
-        /// <summary>
-        /// Loads the users session report card given the user report card file path
-        /// </summary>
-        /// <param name="lUserReportCardPath"></param>
-        /// <returns></returns>
-        internal static WordTransDefLibrary LanTutSessionLoad(string lUserReportCardPath)
-        {
-            throw new NotImplementedException();
+            get
+            {
+                string[] filePaths = Directory.GetFiles(Environment.CurrentDirectory + "/LanTutDictionaries");
+                string[] fileNames = new string[filePaths.Length];
+                for(int ii =0;ii<filePaths.Length;ii++)
+                {
+                    string tmp = new FileInfo(filePaths[ii]).Name;
+                    tmp = tmp.Substring(0, tmp.IndexOf('.'));
+                    fileNames[ii]=(tmp);
+                }
+                
+                return fileNames;
+            }
         }
     }
 }

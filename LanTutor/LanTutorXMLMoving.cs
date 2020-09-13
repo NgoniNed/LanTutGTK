@@ -1,17 +1,7 @@
 ﻿using System.Xml;
+
 namespace LanTutor
 {
-    /*
-    * iterate back and forth between xml nodes modifying scorecard nodes
-    * 
-    * how many questions are in the session file.
-    * get current question.
-    * load all info of current question.
-    * move to next question
-    * move to previous question
-    * when at last question u cant load next question
-    * when at first question u cant load previous question
-    */
     public static class LanTutorXMLMoving
     {
         /// <summary>
@@ -22,8 +12,6 @@ namespace LanTutor
         /// <returns></returns>
         public static XmlDocument LoadXMLFile(string filepath)
         {
-            //XPathDocument document = new XPathDocument(filepath);
-
             XmlDocument doc = new XmlDocument();
             doc.Load(filepath);
             
@@ -34,11 +22,10 @@ namespace LanTutor
         /// </summary>
         /// <param name="SessionDocObj"></param>
         /// <returns></returns>
-        public static XmlNodeList LoadSessionQuestions(XmlDocument SessionDocObj)
+        /*public static XmlNodeList LoadSessionQuestions(XmlDocument SessionDocObj)
         {
-            //should be at node WordTransDef
             return SessionDocObj.SelectNodes("LTSessionScoreCard/SessionLibrary/WordTransDefDict");
-        }
+        }*/
         public static XmlNodeList LoadSessionQuestions(XmlDocument SessionDocObj,string xpathtonodes)
         {
             //should be at node WordTransDef
@@ -49,7 +36,7 @@ namespace LanTutor
         /// </summary>
         /// <param name="CurrentQuestion"></param>
         /// <returns></returns>
-        public static WordTransDefDict GetCurrentQuestion(int CurrentQuestion, ref XmlNodeList currentSessionList)
+        private static WordTransDefDict GetCurrentQuestion(int CurrentQuestion, ref XmlNodeList currentSessionList)
         {
             XmlNode currentQ;
             if(CurrentQuestion>= currentSessionList.Count)
@@ -114,35 +101,17 @@ namespace LanTutor
                     TimeSpent = currentQ.SelectSingleNode("WordScore/TimeSpent").InnerText,
                 },
             };
-            //string lengWord = 
-            //string ltransWord = ;
-            //System.Collections.Generic.List<string> myDefList = new System.Collections.Generic.List<string>();
+
             foreach (XmlNode node in currentQ.SelectNodes("ldef"))
             {
                 currentQurstion.ldef.Add(node.InnerText);
-                //myDefList.Add(node.InnerText);
             }
             
             return currentQurstion;
         }
+
         public static void UpdateCurrentNodeList(WordTransDef updateInfo,int CurrentQuestion, ref XmlNodeList currentSessionList)
         {
-            //XmlNode currentQ;
-            //XmlNodeList updatedNodeList = currentSessionList;
-            /*
-            if (CurrentQuestion >= currentSessionList.Count)
-            {
-                currentQ = currentSessionList[currentSessionList.Count - 1];
-            }
-            else if (CurrentQuestion < 0)
-            {
-                currentQ = currentSessionList[0];
-            }
-            else
-            {
-                currentQ = currentSessionList[CurrentQuestion];
-            }*/
-            //XmlNode current = updatedNodeList[5];
             foreach(XmlNode oldNode in currentSessionList)
             {
                 if(oldNode.Equals(currentSessionList[CurrentQuestion]))
@@ -155,7 +124,6 @@ namespace LanTutor
                     {
                         cDefnode.InnerText = updateInfo.ldef[ii++];
                     }
-                    //oldNode.SelectSingleNode("ldef").InnerText= updateInfo.ldef;
 
                     oldNode.SelectSingleNode("WordScore/Attempts").InnerText=updateInfo.lWordScore.Attempts.ToString();
                     oldNode.SelectSingleNode("WordScore/Score").InnerText= updateInfo.lWordScore.Score.ToString();
@@ -167,35 +135,7 @@ namespace LanTutor
                 }
                 
             }
-            /*
-            WordTransDef currentQurstion = new WordTransDef()
-            {
-                lword = currentQ.SelectSingleNode("lword").InnerText,
-                lTrans = currentQ.SelectSingleNode("lTrans").InnerText,
-                ldef = new System.Collections.Generic.List<string>(),
-                lDescriptionScore = new ScoreParameters()
-                {
-                    Attempts = int.Parse(currentQ.SelectSingleNode("DescriptionScore/Attempts").InnerText),
-                    Score = double.Parse(currentQ.SelectSingleNode("DescriptionScore/Score").InnerText),
-                    TimeSpent = currentQ.SelectSingleNode("DescriptionScore/TimeSpent").InnerText,
-                },
-                lWordScore = new ScoreParameters()
-                {
-                    Attempts = int.Parse(currentQ.SelectSingleNode("WordScore/Attempts").InnerText),
-                    Score = double.Parse(currentQ.SelectSingleNode("WordScore/Score").InnerText),
-                    TimeSpent = currentQ.SelectSingleNode("WordScore/TimeSpent").InnerText,
-                },
-            };
-            //string lengWord = 
-            //string ltransWord = ;
-            //System.Collections.Generic.List<string> myDefList = new System.Collections.Generic.List<string>();
-            foreach (XmlNode node in currentQ.SelectNodes("ldef"))
-            {
-                currentQurstion.ldef.Add(node.InnerText);
-                //myDefList.Add(node.InnerText);
-            }
-            */
-            //return updatedNodeList;
+            
         }
         /// <summary>
         /// returns the next question using the current question as reference location
@@ -204,15 +144,11 @@ namespace LanTutor
         /// <returns></returns>
         public static WordTransDefDict GetNextQuestion(int CurrentQuestion,ref XmlNodeList currentSessionList)
         {
-            //int tmpii = CurrentQuestion + 1;
             return ListBoundaryTester(ref currentSessionList, (CurrentQuestion+1));
-            //return GetCurrentQuestion(ref tmpii, ref currentSessionList);
         }
         public static WordTransDef GetNextQuestionl(int CurrentQuestion, ref XmlNodeList currentSessionList)
         {
-            //int tmpii = CurrentQuestion + 1;
             return ListBoundaryTesterl(ref currentSessionList, (CurrentQuestion + 1));
-            //return GetCurrentQuestion(ref tmpii, ref currentSessionList);
         }
         /// <summary>
         /// returns the previous question using the current question as reference location
@@ -221,15 +157,11 @@ namespace LanTutor
         /// <returns></returns>
         public static WordTransDefDict GetPreviousQuestion(int CurrentQuestion, ref XmlNodeList currentSessionList)
         {
-            //int tmpii = CurrentQuestion - 1;
             return ListBoundaryTester(ref currentSessionList, (CurrentQuestion-1));
-
         }
         public static WordTransDef GetPreviousQuestionl(int CurrentQuestion, ref XmlNodeList currentSessionList)
         {
-            //int tmpii = CurrentQuestion - 1;
             return ListBoundaryTesterl(ref currentSessionList, (CurrentQuestion - 1));
-
         }
         private static WordTransDefDict ListBoundaryTester(ref XmlNodeList currentSessionList, int tmpii)
         {
@@ -243,7 +175,7 @@ namespace LanTutor
                 tmpii = 0;
                 return GetCurrentQuestion(tmpii, ref currentSessionList);
             }
-            else //if(tmpii>=0 &&tmpii<= currentSessionList.Count)
+            else
             {
                 return GetCurrentQuestion(tmpii, ref currentSessionList);
             }
@@ -260,34 +192,10 @@ namespace LanTutor
                 tmpii = 0;
                 return GetCurrentQuestionl(tmpii, ref currentSessionList);
             }
-            else //if(tmpii>=0 &&tmpii<= currentSessionList.Count)
+            else
             {
                 return GetCurrentQuestionl(tmpii, ref currentSessionList);
             }
         }
-        /*
-/// <summary>
-/// this method checks to see if end of session questions has been reached
-/// using the current reference object as reference location. if the end of session questions
-/// has been reached it returns true otherwise false
-/// </summary>
-/// <param name="currentObject"></param>
-/// <returns></returns>
-private static bool EndOfQuestions(ref int currentPosition, ref XmlNodeList currentSessionList)
-{
-
-   return true;
-}
-/// <summary>
-/// this method determines if the current question is at the start or end of the questions whilst
-/// the currentObject as a reference location
-/// if its at the start it returns true otherwise false.
-/// </summary>
-/// <param name="currentObject"></param>
-/// <returns></returns>
-private static bool StartOfQuestions(ref object currentObject)
-{
-   return true;
-}*/
     }
 }

@@ -5,6 +5,11 @@ using System.Xml;
 
 namespace LanTutor
 {
+    /// <summary>
+    /// Contains methods used to setup the initial backend files,
+    /// folders and relevant file checks for the applications initial
+    /// startup.
+    /// </summary>
     public static class LTPhaseOneCore
     {
         internal static XmlNodeList ExecuteProgramBackend()
@@ -26,7 +31,7 @@ namespace LanTutor
             }
             
             //XmlNodeList nodeList =
-            return  LanTutorXMLMoving.LoadSessionQuestions(LanTutorXMLMoving.LoadXMLFile(Directory.GetFiles(Environment.CurrentDirectory + "/ReportCards")[0]), "WordTransDefLibrary/SessionLibrary/WordTransDef");
+            return  LanTutorXMLMoving.LoadSessionQuestions(LTReadFile.LoadXMLFile(Directory.GetFiles(Environment.CurrentDirectory + "/ReportCards")[0]), "WordTransDefLibrary/SessionLibrary/WordTransDef");
             //Console.WriteLine(nodeList.Count);
             //int qNum = 5;
             //GetQuestion(nodeList, 1);
@@ -137,7 +142,12 @@ namespace LanTutor
             Directory.CreateDirectory(lmainDirectory + "/ReportCards");
             LTWriteFile.WriteSchemeToxml(llibrary, "/ngoni" + "_ReportCard.xml", lmainDirectory + "/ReportCards");
         }
-
+        /// <summary>
+        /// Populates information regarding the users score into the
+        /// referenced file
+        /// </summary>
+        /// <param name="lfiles"></param>
+        /// <returns></returns>
         public static LTSessionScoreCard GenerateSessionScoreCard(string lfiles)
         {
             System.Xml.XmlDocument document = new System.Xml.XmlDocument();
@@ -190,11 +200,12 @@ namespace LanTutor
             return sp;
         }
         /// <summary>
-        /// requires folder path of the xml wordnet processed dictionary files
-        /// _adj.xml, _verbs.xml, _noun.xml, _adv.xml
-        /// the folder path should be provided in <paramref name="llantutmaindirectory"/>
+        /// Method to prepare the the data for the user as a WordTransDefLibrary
+        /// object.
         /// </summary>
-        /// <param name="llantutmaindirectory"></param>
+        /// <param name="lfile"></param>
+        /// <param name="myset"></param>
+        /// <returns></returns>
         private static WordTransDefLibrary DataPrep(string lfile, List<WordObject> myset)
         {
             //load the definations of the files
@@ -246,26 +257,6 @@ namespace LanTutor
             return lwordTransDefLibrary;
         }
 
-        // <summary>
-        /// Compiles the user's current word and description scores into a single
-        /// data type that represents the users score report.
-        /// </summary>
-        /// <returns></returns>
-        public static object CompileScoreCardReport(object lCurrentword, object lCurrentDescription, object lfirstlanguageWord)
-        {
-            object lScoreCardReport = new object();
-            return lScoreCardReport;
-        }
-        /// <summary>
-        /// Grades each description that the user has practiced, given the current description data object
-        /// it returns an equavalent object with the users score.
-        /// </summary>
-        /// <param name="lCurrentWord"></param>
-        /// <returns></returns>
-        public static object GradeDescription(object lCurrentDescription)
-        {
-            return lCurrentDescription;
-        }
         /// <summary>
         /// Grades each word that the user has practiced, given the current word data object
         /// it returns an equavalent object with the users score.
@@ -275,33 +266,6 @@ namespace LanTutor
         public static object GradeWord(object lCurrentWord)
         {
             return lCurrentWord;
-        }
-        /// <summary>
-        /// Loads data from the source file using the method from the static class
-        /// LTReadFile. The Return type of the loaded data is based on the custom
-        /// data type LTWordData.
-        /// </summary>
-        /// <param name="lSourceFileName"></param>
-        /// <returns></returns>
-        public static List<object> LoadCurrentPhaseWords(string lSourceFileName)
-        {
-            return LTReadFile.ReadFile(lSourceFileName);
-        }
-        public static string[] GetListOfTranslationOptions
-        {
-            get
-            {
-                string[] filePaths = Directory.GetFiles(Environment.CurrentDirectory + "/LanTutDictionaries");
-                string[] fileNames = new string[filePaths.Length];
-                for(int ii =0;ii<filePaths.Length;ii++)
-                {
-                    string tmp = new FileInfo(filePaths[ii]).Name;
-                    tmp = tmp.Substring(0, tmp.IndexOf('.'));
-                    fileNames[ii]=(tmp);
-                }
-                
-                return fileNames;
-            }
-        }
+        }       
     }
 }

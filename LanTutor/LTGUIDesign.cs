@@ -241,7 +241,7 @@ namespace LanTutor
             buttonFix.Put(userDescrScoreLabel, 140, 120);
             buttonFix.Put(UserDescriptionScore, 140, 140);
 
-            ComboBox LanguageComboOptions = new ComboBox(LTPhaseOneCore.GetListOfTranslationOptions);
+            ComboBox LanguageComboOptions = new ComboBox(LTReadFile.GetListOfTranslationOptions);
             LanguageComboOptions.SetSizeRequest(100, 40);
             TreeIter iter;
             LanguageComboOptions.Model.GetIterFirst(out iter);

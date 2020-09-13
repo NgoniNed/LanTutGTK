@@ -6,12 +6,45 @@ using System;
 
 namespace LanTutor
 {
+
+    /// <summary>
+    /// This class is used to read files, folders and load information
+    /// from the specified files
+    /// </summary>
     public static class LTReadFile
     {
-        public static List<object> ReadFile(string lsourcefilename)
+        /// <summary>
+        /// Property to retrieve the list of translation dictionary options
+        /// available from the specified file location.
+        /// </summary>
+        public static string[] GetListOfTranslationOptions
         {
-            List<object> loadedData = new List<object>();
-            return loadedData;
+            get
+            {
+                string[] filePaths = Directory.GetFiles(Environment.CurrentDirectory + "/LanTutDictionaries");
+                string[] fileNames = new string[filePaths.Length];
+                for (int ii = 0; ii < filePaths.Length; ii++)
+                {
+                    string tmp = new FileInfo(filePaths[ii]).Name;
+                    tmp = tmp.Substring(0, tmp.IndexOf('.'));
+                    fileNames[ii] = (tmp);
+                }
+
+                return fileNames;
+            }
+        }
+        /// <summary>
+        /// Method to load an XMLDocument object from an
+        /// xml file
+        /// </summary>
+        /// <param name="filepath"></param>
+        /// <returns></returns>
+        public static XmlDocument LoadXMLFile(string filepath)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(filepath);
+
+            return doc;
         }
         /// <summary>
         /// Pulls the file names from the given file path
@@ -107,8 +140,13 @@ namespace LanTutor
             }
             return lSessionlibrary;
         }
-
-        internal static List<WordObject> LoadDefinations(string folderPath)
+        /// <summary>
+        /// Method to Load the definations or descriptions from the specified
+        /// folder path into a collection list of WordObect
+        /// </summary>
+        /// <param name="folderPath"></param>
+        /// <returns></returns>
+        public static List<WordObject> LoadDefinations(string folderPath)
         {
             //SessionWordSet lset = new SessionWordSet();
             string[] files = Directory.GetFiles(folderPath);

@@ -2,39 +2,29 @@
 
 namespace LanTutor
 {
+    /// <summary>
+    /// Class used to move around the library data session object
+    /// </summary>
     public static class LanTutorXMLMoving
     {
         /// <summary>
-        /// this method open an xml file for reading and returns an
-        /// xmldocument object reference to the file.
-        /// </summary>
-        /// <param name="filepath"></param>
-        /// <returns></returns>
-        public static XmlDocument LoadXMLFile(string filepath)
-        {
-            XmlDocument doc = new XmlDocument();
-            doc.Load(filepath);
-            
-            return doc;
-        }
-        /// <summary>
-        /// returns the number of questions avalable in the current session
+        /// Method used to retrieve specified XML nodes given
+        /// a specified xml node path from an XMLDocument Object.
         /// </summary>
         /// <param name="SessionDocObj"></param>
+        /// <param name="xpathtonodes"></param>
         /// <returns></returns>
-        /*public static XmlNodeList LoadSessionQuestions(XmlDocument SessionDocObj)
-        {
-            return SessionDocObj.SelectNodes("LTSessionScoreCard/SessionLibrary/WordTransDefDict");
-        }*/
         public static XmlNodeList LoadSessionQuestions(XmlDocument SessionDocObj,string xpathtonodes)
         {
             //should be at node WordTransDef
             return SessionDocObj.SelectNodes(xpathtonodes);
         }
         /// <summary>
-        /// returns the current question to be answered by the user
+        /// Method which returns a WordTransDefDict object reference by
+        /// its position within a given xmlnodelist
         /// </summary>
         /// <param name="CurrentQuestion"></param>
+        /// <param name="currentSessionList"></param>
         /// <returns></returns>
         private static WordTransDefDict GetCurrentQuestion(int CurrentQuestion, ref XmlNodeList currentSessionList)
         {
@@ -68,6 +58,13 @@ namespace LanTutor
             };
             return currentQurstion;
         }
+        /// <summary>
+        /// Method which returns a WordTransDef object reference by
+        /// its position within a given xmlnodelist
+        /// </summary>
+        /// <param name="CurrentQuestion"></param>
+        /// <param name="currentSessionList"></param>
+        /// <returns></returns>
         public static WordTransDef GetCurrentQuestionl(int CurrentQuestion, ref XmlNodeList currentSessionList)
         {
             XmlNode currentQ;
@@ -109,7 +106,13 @@ namespace LanTutor
             
             return currentQurstion;
         }
-
+        /// <summary>
+        /// Method which updates the current XmlNode data with updateInfo, referenced by th
+        /// current position indexer(CurrentQuestion) to the currentSessionList
+        /// </summary>
+        /// <param name="updateInfo"></param>
+        /// <param name="CurrentQuestion"></param>
+        /// <param name="currentSessionList"></param>
         public static void UpdateCurrentNodeList(WordTransDef updateInfo,int CurrentQuestion, ref XmlNodeList currentSessionList)
         {
             foreach(XmlNode oldNode in currentSessionList)
@@ -138,31 +141,58 @@ namespace LanTutor
             
         }
         /// <summary>
-        /// returns the next question using the current question as reference location
+        /// Method which retrieves the next WordTransDefDict reference by
+        /// its position
         /// </summary>
         /// <param name="CurrentQuestion"></param>
+        /// <param name="currentSessionList"></param>
         /// <returns></returns>
         public static WordTransDefDict GetNextQuestion(int CurrentQuestion,ref XmlNodeList currentSessionList)
         {
             return ListBoundaryTester(ref currentSessionList, (CurrentQuestion+1));
         }
+        /// <summary>
+        /// Method which retrieves the next WordTransDef reference by
+        /// its position
+        /// </summary>
+        /// <param name="CurrentQuestion"></param>
+        /// <param name="currentSessionList"></param>
+        /// <returns></returns>
         public static WordTransDef GetNextQuestionl(int CurrentQuestion, ref XmlNodeList currentSessionList)
         {
             return ListBoundaryTesterl(ref currentSessionList, (CurrentQuestion + 1));
         }
         /// <summary>
-        /// returns the previous question using the current question as reference location
+        /// Method which retrieves the previous WordTransDefDict reference by
+        /// its position
         /// </summary>
         /// <param name="CurrentQuestion"></param>
+        /// <param name="currentSessionList"></param>
         /// <returns></returns>
         public static WordTransDefDict GetPreviousQuestion(int CurrentQuestion, ref XmlNodeList currentSessionList)
         {
             return ListBoundaryTester(ref currentSessionList, (CurrentQuestion-1));
         }
+        /// <summary>
+        /// Method which retrieves the previous WordTransDef reference by
+        /// its position
+        /// </summary>
+        /// <param name="CurrentQuestion"></param>
+        /// <param name="currentSessionList"></param>
+        /// <returns></returns>
         public static WordTransDef GetPreviousQuestionl(int CurrentQuestion, ref XmlNodeList currentSessionList)
         {
             return ListBoundaryTesterl(ref currentSessionList, (CurrentQuestion - 1));
         }
+        /// <summary>
+        /// Method which retrieves WordTransDefDict object from an
+        /// XmlNodeList object given that the reference index is not
+        /// outside of the nodelist range, otherwise it retrieves the first
+        /// or last WordTransDefDict object from the XmlNodeList
+        /// </summary>
+        /// <param name="currentSessionList"></param>
+        /// <param name="tmpii"></param>
+        /// <returns></returns>
         private static WordTransDefDict ListBoundaryTester(ref XmlNodeList currentSessionList, int tmpii)
         {
             if (tmpii > currentSessionList.Count)
@@ -180,6 +210,15 @@ namespace LanTutor
                 return GetCurrentQuestion(tmpii, ref currentSessionList);
             }
         }
+        /// <summary>
+        /// Method which retrieves WordTransDef object from an
+        /// XmlNodeList object given that the reference index is not
+        /// outside of the nodelist range, otherwise it retrieves the first
+        /// or last WordTransDef object from the XmlNodeList
+        /// </summary>
+        /// <param name="currentSessionList"></param>
+        /// <param name="tmpii"></param>
+        /// <returns></returns>
         private static WordTransDef ListBoundaryTesterl(ref XmlNodeList currentSessionList, int tmpii)
         {
             if (tmpii > currentSessionList.Count)

@@ -14,6 +14,25 @@ namespace LanTutor
     public static class LTReadFile
     {
         /// <summary>
+        /// Gets all the report card xml files from the report cards directory
+        /// </summary>
+        public static string[] GetReportCards
+        {
+            get
+            {
+                if(Directory.Exists(Environment.CurrentDirectory + "/ReportCards")&& Directory.GetFiles(Environment.CurrentDirectory + "/ReportCards").Length>0)
+                {
+                    return Directory.GetFiles(Environment.CurrentDirectory + "/ReportCards");
+                }
+                else
+                {
+                    LTPhaseOneCore.LanTutEnvironmentSetup();
+
+                    return Directory.GetFiles(Environment.CurrentDirectory + "/ReportCards");
+                }
+            }
+        }
+        /// <summary>
         /// Property to retrieve the list of translation dictionary options
         /// available from the specified file location.
         /// </summary>

@@ -5,33 +5,41 @@ using System.Xml;
 
 namespace LanTutor
 {
+
     /// <summary>
     /// Contains methods used to setup the initial backend files,
     /// folders and relevant file checks for the applications initial
     /// startup.
     /// </summary>
-    public static class LTPhaseOneCore
+    public class LTPhaseOneCore : LTGUIDesign
     {
-        internal static XmlNodeList ExecuteProgramBackend()
+        internal static XmlNodeList ExecuteProgramBackend(string ReportCardPath)
         {
-            if (!(Directory.Exists(Environment.CurrentDirectory + "/ReportCards")) || (Directory.GetFiles(Environment.CurrentDirectory + "/ReportCards").Length <= 0))
+            //string[] reportCardProcessed = Directory.GetFiles(Environment.CurrentDirectory + "/ReportCards");
+            if (!(Directory.Exists(Environment.CurrentDirectory + "/ReportCards")) || AvailableReportCards.Length<1)
             {
                 LTPhaseOneCore.LanTutEnvironmentSetup();
+                LTGUIDesign.DialogBoxWindow("Environment Now Ready...\n Preparing session");
+
             }
             else
             {
-                Gtk.Window dWindow = new Gtk.Window("Dialog");
-                Gtk.MessageDialog dialog = new Gtk.MessageDialog(dWindow, Gtk.DialogFlags.Modal, Gtk.MessageType.Warning, Gtk.ButtonsType.Ok, "Envirnment Is Ready");
-                dialog.SetSizeRequest(400, 200);
-                dialog.WindowPosition = Gtk.WindowPosition.Center;
-                dialog.Run();
-                dialog.Destroy();
-
-                Console.WriteLine("Environment Is Ready...\n Preparing session");
+                LTGUIDesign.DialogBoxWindow("Environment Is Ready...\n Preparing session");
+                //Console.WriteLine();
             }
-            
+            foreach(string reports in AvailableReportCards)
+            {
+                if(reports.Contains(ActiveReportCard))
+                {
+                    return LanTutorXMLMoving.LoadSessionQuestions(LTReadFile.LoadXMLFile(reports), "WordTransDefLibrary/SessionLibrary/WordTransDef");
+
+                }
+            }
+            //update active iter for combolanguage box to be that of the one with the available report card
+            //LanguageComboOptions.mo
+            return LanTutorXMLMoving.LoadSessionQuestions(LTReadFile.LoadXMLFile(AvailableReportCards[0]), "WordTransDefLibrary/SessionLibrary/WordTransDef");
+
             //XmlNodeList nodeList =
-            return  LanTutorXMLMoving.LoadSessionQuestions(LTReadFile.LoadXMLFile(Directory.GetFiles(Environment.CurrentDirectory + "/ReportCards")[0]), "WordTransDefLibrary/SessionLibrary/WordTransDef");
             //Console.WriteLine(nodeList.Count);
             //int qNum = 5;
             //GetQuestion(nodeList, 1);
@@ -116,14 +124,6 @@ namespace LanTutor
             */
         }
 
-        internal static void GetQuestion(ref XmlNodeList nodeList, int qNum)
-        {
-            WordTransDef currentQuestion = LanTutorXMLMoving.GetCurrentQuestionl(qNum, ref nodeList);
-
-            LTGUIDesign.UpdateMotherTongueView(currentQuestion.lword);
-            LTGUIDesign.UpdateTranslationView(currentQuestion.lTrans);
-            LTGUIDesign.UpdateDescriptionView(currentQuestion.ldef);
-        }
 
         internal static void LanTutEnvironmentSetup()
         {
@@ -136,11 +136,18 @@ namespace LanTutor
             /*
              * move tei translation dictionaries to lantutdictionaries
              */
-            WordTransDefLibrary llibrary = DataPrep(LTReadFile.GetTranslationDictionaries(lmainDirectory + "/LanTutDictionaries")[0], LTReadFile.LoadDefinations(lmainDirectory+ "/EnglishDictionaries"));
-            
+            WordTransDefLibrary llibrary = DataPrep(LTReadFile.GetTranslationDictionaries(lmainDirectory + "/LanTutDictionaries")[1], LTReadFile.LoadDefinations(lmainDirectory + "/EnglishDictionaries"));
+            FileInfo fI = new FileInfo(LTReadFile.GetTranslationDictionaries(lmainDirectory + "/LanTutDictionaries")[0]);//LTReadFile.GetTranslationDictionaries(lmainDirectory + "/LanTutDictionaries")[0]
             //create the report cards folder
             Directory.CreateDirectory(lmainDirectory + "/ReportCards");
-            LTWriteFile.WriteSchemeToxml(llibrary, "/ngoni" + "_ReportCard.xml", lmainDirectory + "/ReportCards");
+            LTWriteFile.WriteSchemeToxml(llibrary, "/ngoni_" + fI.Name.Replace(".tei","") + "_ReportCard.xml", lmainDirectory + "/ReportCards");
+        }
+        internal static string[] GenerateLangaugeOptions
+        {
+            get
+            {
+                return Directory.GetFiles(Environment.CurrentDirectory + "/LanTutDictionaries");
+            }
         }
         /// <summary>
         /// Populates information regarding the users score into the
@@ -206,7 +213,7 @@ namespace LanTutor
         /// <param name="lfile"></param>
         /// <param name="myset"></param>
         /// <returns></returns>
-        private static WordTransDefLibrary DataPrep(string lfile, List<WordObject> myset)
+        public static WordTransDefLibrary DataPrep(string lfile, List<WordObject> myset)
         {
             //load the definations of the files
             Console.WriteLine("Definations =>"+ myset.Count);
@@ -255,17 +262,6 @@ namespace LanTutor
             }
 
             return lwordTransDefLibrary;
-        }
-
-        /// <summary>
-        /// Grades each word that the user has practiced, given the current word data object
-        /// it returns an equavalent object with the users score.
-        /// </summary>
-        /// <param name="lCurrentWord"></param>
-        /// <returns></returns>
-        public static object GradeWord(object lCurrentWord)
-        {
-            return lCurrentWord;
-        }       
+        }     
     }
 }

@@ -54,9 +54,9 @@
     <Compile Include="LTScoreCard.cs" />
     <Compile Include="LanTutorXMLMoving.cs" />
     <Compile Include="LTGUIDesign.cs" />
+    <Compile Include="LTGUIElements.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ProgramRequirements.txt" />
     <None Include="Dictionary\eng-nld_LanTut_.xml" />
     <None Include="Dictionary\eng-rus_LanTut_.xml" />
     <None Include="Dictionary\eng-ara_LanTut_.xml" />

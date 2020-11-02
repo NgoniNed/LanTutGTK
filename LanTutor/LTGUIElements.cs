@@ -3,7 +3,7 @@ using Gtk;
 
 namespace LanTutor
 {
-    internal class LTGUIElements
+    public class LTGUIElements: Window
     {
         private Gdk.Color cLightSlateBlue = new Gdk.Color(132, 112, 255);
         private Gdk.Color cBabyBlue = new Gdk.Color(99, 184, 255);
@@ -21,6 +21,9 @@ namespace LanTutor
         public TextView TranslationView = new TextView();
         public TextView DescriptionView = new TextView();
         public ComboBox testingMode;
+        public static ComboBox AttemptsTracker;
+        public static ComboBox UserwordScore;
+        public static ComboBox UserDescriptionScore;
         public System.Xml.XmlNodeList sessionDataList { get; set; }
         public int QuestionIterator = 0;
         protected TreeIter QuestionTreeiter;
@@ -35,12 +38,11 @@ namespace LanTutor
             get;
             set;
         }
-        //; = new Fixed();
 
-        public LTGUIElements(string appTitle,LTGUIDesign mainWind)
+        public LTGUIElements(string appTitle,LTGUIDesign mainWind): base(appTitle)
         {
             sessionDataList= LTPhaseOneCore.ExecuteProgramBackend(LanguageComboOptions.ActiveText);
-            LTGUIDesign.DialogBoxWindow("LTGUIElements"+"\n\t"+sessionDataList.Count.ToString());
+            //LTGUIDesign.DialogBoxWindow("LTGUIElements"+"\n\t"+sessionDataList.Count.ToString());
             parentWind = mainWind;
             buttonFix = new Fixed();
             
@@ -50,9 +52,7 @@ namespace LanTutor
             SetupGUITextArea();
             SetupComboBox();
             SetupGUIEventHandlers();
-            //parentWind.LoadInitialQuestion(sessionDataList);
-            parentWind.Add(buttonFix);
-            //LTEvents eventHandlingClass = new LTEvents();
+            parentWind.Mainwindow.Add(buttonFix);
         }
 
         private void SetupMenuBar()
@@ -78,16 +78,18 @@ namespace LanTutor
 
             buttonFix.Put(LTmenu, 0, 0);
         }
+
+
         /// <summary>
         /// this method sets up the screen dimensions and
         /// background color of the main window
         /// </summary>
         private void SetupScreenSize()
         {
-            parentWind.SetDefaultSize(525, 800);
-            parentWind.SetPosition(WindowPosition.CenterOnParent);
-            parentWind.ModifyBg(StateType.Normal, cLightSlateBlue);
-            bool GUIIconSet = parentWind.SetIconFromFile("/Volumes/Secondary/Projects/PersonalGTK/LanTutor/LanTutor/GUIResources/LanTut.png");
+            parentWind.Mainwindow.SetDefaultSize(525, 800);
+            parentWind.Mainwindow.SetPosition(WindowPosition.CenterOnParent);
+            parentWind.Mainwindow.ModifyBg(StateType.Normal, cLightSlateBlue);
+            bool GUIIconSet = parentWind.Mainwindow.SetIconFromFile("/Volumes/Secondary/Projects/PersonalGTK/LanTutor/LanTutor/GUIResources/LanTut.png");
             Console.WriteLine("GUI Icon Set:\t" + GUIIconSet);
         }
         private void SetupGUIButtons()
@@ -128,7 +130,6 @@ namespace LanTutor
             DescriptionViewLabel.SetSizeRequest(120, 40);
 
             DescriptionView.ModifyBg(StateType.Normal, new Gdk.Color(20, 20, 20));
-            //DescriptionView.CursorVisible = false;
             DescriptionView.SetSizeRequest(470, 200);
 
             buttonFix.Put(MotherTongueViewLabel, 190, 180);
@@ -167,7 +168,7 @@ namespace LanTutor
                 AttemptCounter[i] = (i + " / " + maxAttempts).ToString();
             }
             Label AttemptTrackerLabel = new Label("Number of Attempts");
-            ComboBox AttemptsTracker = new ComboBox(AttemptCounter);
+            AttemptsTracker = new ComboBox(AttemptCounter);
             AttemptsTracker.Sensitive = false;
             AttemptsTracker.SetSizeRequest(80, 40);
             TreeIter Attemptiter;
@@ -197,7 +198,7 @@ namespace LanTutor
                 scoreCounter[i] = i.ToString();
             }
             Label userWordScoreLabel = new Label("Word Score");
-            ComboBox UserwordScore = new ComboBox(scoreCounter);
+            UserwordScore = new ComboBox(scoreCounter);
             UserwordScore.Sensitive = false;
             UserwordScore.SetSizeRequest(80, 40);
             TreeIter worditer;
@@ -207,7 +208,8 @@ namespace LanTutor
             buttonFix.Put(UserwordScore, 20, 140);
 
             Label userDescrScoreLabel = new Label("Description Score");
-            ComboBox UserDescriptionScore = new ComboBox(scoreCounter);
+
+            UserDescriptionScore = new ComboBox(scoreCounter);
             UserDescriptionScore.Sensitive = false;
             UserDescriptionScore.SetSizeRequest(80, 40);
             TreeIter descriter;
@@ -227,7 +229,7 @@ namespace LanTutor
 
         internal void SetupGUIEventHandlers()
         {
-            parentWind.DeleteEvent += Exit_Activated;
+            parentWind.Mainwindow.DeleteEvent += Exit_Activated;
             LanguageComboOptions.Changed += LanguageComboOptions_Changed;
             testingMode.Changed += TestingMode_Changed;
             NextQuestion.Clicked += NextQuestion_Clicked;
@@ -238,20 +240,18 @@ namespace LanTutor
             EndSession.Activated += EndSession_Activated;
             exit.Activated += Exit_Activated;
         }
-
+        private void TestingMode_Changed(object sender, EventArgs e)
+        {
+            parentWind.LoadInitialQuestion();
+            
+        }
         private void LanguageComboOptions_Changed(object sender, EventArgs e)
         {
-            int languageIndex = 0;
+            
             ComboBox currentSender = (ComboBox)sender;
-            string activeLanguage = currentSender.ActiveText;
-            foreach (string langString in LTReadFile.GetListOfTranslationOptions)
-            {
-                if (activeLanguage.Equals(langString))
-                {
-                    LoadLanguage(ref languageIndex, ref activeLanguage, ref currentSender);
-                    break;
-                }
-            }
+            //LTGUIDesign.DialogBoxWindow("Language combo box change event\t\n"+currentSender.ActiveText);
+            parentWind.LoadInitialQuestion();
+            
         }
         /// <summary>
         /// check current language selection and loads the
@@ -274,7 +274,6 @@ namespace LanTutor
                         if (lfileInfo.Name.Contains(languageSelected))
                         {
                             //load the report card
-                            //DialogBoxWindow(lf)
                             sessionDataList = LanTutorXMLMoving.LoadSessionQuestions(LTReadFile.LoadXMLFile(lfileInfo.FullName), "WordTransDefLibrary/SessionLibrary/WordTransDef");
                             parentWind.LoadInitialQuestion();
                         }
@@ -301,22 +300,19 @@ namespace LanTutor
             }
             catch (Exception ex)
             {
-                LTGUIDesign.DialogBoxWindow(ex.Message);
+                //LTGUIDesign.DialogBoxWindow(ex.Message);
             }
         }
-        private void TestingMode_Changed(object sender, EventArgs e)
-        {
-            //LoadInitialQuestion();
-        }
+        
         private void LoadSession_Activated(object sender, EventArgs e)
         {
             if (!sessionDataList.Count.Equals(0))
             {
-                LTGUIDesign.DialogBoxWindow("Session Is Ready");
+                //LTGUIDesign.DialogBoxWindow("Session Is Ready");
             }
             else
             {
-                LTGUIDesign.DialogBoxWindow("Something went wrong\nReloading Session Data");
+                //LTGUIDesign.DialogBoxWindow("Something went wrong\nReloading Session Data");
                 sessionDataList = LTPhaseOneCore.ExecuteProgramBackend(LanguageComboOptions.ActiveText);
             }
         }
@@ -327,36 +323,68 @@ namespace LanTutor
             myPath.Prev();
             QuestionTracker.Model.GetIter(out QuestionTreeiter, myPath);
             QuestionTracker.SetActiveIter(QuestionTreeiter);
-            LTGUIDesign.DialogBoxWindow("No Answers Submitted\nGetting Previous Question\n" + QuestionTracker.Model.GetValue(QuestionTreeiter, 0));
+            //LTGUIDesign.DialogBoxWindow("No Answers Submitted\nGetting Previous Question\n" + QuestionTracker.Model.GetValue(QuestionTreeiter, 0));
             QuestionIterator--;
             parentWind.LoadInitialQuestion();
         }
 
+        internal static void UpdateScoresComboBox(ScoreParameters lScoreDescription, ScoreParameters lScoreWord)
+        {
+            lScoreWord.Score = 5;
+            TreeIter userScoreTreeIter = new TreeIter();
+            UserwordScore.Model.GetIterFromString(out userScoreTreeIter, lScoreWord.Score.ToString());
+            UserwordScore.SetActiveIter(userScoreTreeIter);
+
+            lScoreDescription.Score = 15;
+            TreeIter userDescrpScoreTreeIter = new TreeIter();
+            UserDescriptionScore.Model.GetIterFromString(out userDescrpScoreTreeIter, lScoreDescription.Score.ToString());
+            UserDescriptionScore.SetActiveIter(userDescrpScoreTreeIter);
+
+            lScoreWord.Attempts = 80;
+            TreeIter userAttemptsTreeIter = new TreeIter();
+            AttemptsTracker.Model.GetIterFromString(out userAttemptsTreeIter, lScoreWord.Attempts.ToString());
+            AttemptsTracker.SetActiveIter(userAttemptsTreeIter);
+            
+        }
         private void NextQuestion_Clicked(object sender, EventArgs e)
         {
             //retrieve the next question and load into the gui
-            bool tmp = QuestionTracker.Model.IterNext(ref QuestionTreeiter);
-            QuestionTracker.SetActiveIter(QuestionTreeiter);
-            LTGUIDesign.DialogBoxWindow("No Answers Submitted\nGetting Next Question\n" + tmp);
+
             QuestionIterator++;
+            //LTGUIDesign.DialogBoxWindow("No Answers Submitted\nGetting Next Question\n" + tmp);
+            if (QuestionIterator <= 50)
+            {
+                bool tmp = QuestionTracker.Model.IterNext(ref QuestionTreeiter);
+                
+            }
+            else
+            {
+                LTGUIDesign.DialogBoxWindow("Yo yo end of line reset questiontracter");
+                QuestionIterator = 0;
+                //TreeIter resetQuestionComboBox = new TreeIter();
+                
+                QuestionTracker.Model.GetIterFirst(out QuestionTreeiter);
+                //QuestionTracker.SetActiveIter(resetQuestionComboBox);
+            }
+            QuestionTracker.SetActiveIter(QuestionTreeiter);
             parentWind.LoadInitialQuestion();
         }
 
         private void SubmitAnswer_Clicked(object sender, EventArgs e)
         {
-            LTGUIDesign.DialogBoxWindow("Submitting Answers");
+            //LTGUIDesign.DialogBoxWindow("Submitting Answers");
             NextQuestion_Clicked(sender, e);
         }
 
         private void EndSession_Activated(object sender, EventArgs e)
         {
-            LTGUIDesign.DialogBoxWindow("Session Is Ending");
+            //LTGUIDesign.DialogBoxWindow("Session Is Ending");
             Application.Quit();
         }
 
         private void Exit_Activated(object sender, EventArgs e)
         {
-            LTGUIDesign.DialogBoxWindow("Application Is Quiting");
+            //LTGUIDesign.DialogBoxWindow("Application Is Quiting");
             Application.Quit();
         }
     }

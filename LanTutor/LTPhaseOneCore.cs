@@ -15,113 +15,40 @@ namespace LanTutor
     {
         internal static XmlNodeList ExecuteProgramBackend(string ReportCardPath)
         {
-            //string[] reportCardProcessed = Directory.GetFiles(Environment.CurrentDirectory + "/ReportCards");
             if (!(Directory.Exists(Environment.CurrentDirectory + "/ReportCards")) || AvailableReportCards.Length<1)
             {
                 LTPhaseOneCore.LanTutEnvironmentSetup();
-                LTGUIDesign.DialogBoxWindow("Environment Now Ready...\n Preparing session");
-
+                
             }
             else
             {
-                LTGUIDesign.DialogBoxWindow("Environment Is Ready...\n Preparing session");
-                //Console.WriteLine();
+                
             }
-            foreach(string reports in AvailableReportCards)
-            {
-                if(reports.Contains(ActiveReportCard))
-                {
-                    return LanTutorXMLMoving.LoadSessionQuestions(LTReadFile.LoadXMLFile(reports), "WordTransDefLibrary/SessionLibrary/WordTransDef");
 
+            foreach (string reports in AvailableReportCards)
+            {
+                try
+                {
+                    if (reports.Contains(LTGUIDesign.UIElement.LanguageComboOptions.ActiveText))
+                    {
+
+                        return LanTutorXMLMoving.LoadSessionQuestions(LTReadFile.LoadXMLFile(reports), "WordTransDefLibrary/SessionLibrary/WordTransDef");
+
+                    }
                 }
+                catch (NullReferenceException NRE)
+                {
+                    LTGUIDesign.DialogBoxWindow(NRE.Message);
+                    break;
+                }
+                
+                
             }
             //update active iter for combolanguage box to be that of the one with the available report card
             //LanguageComboOptions.mo
+            //look for the index of the reportcard referenced by the user interface
             return LanTutorXMLMoving.LoadSessionQuestions(LTReadFile.LoadXMLFile(AvailableReportCards[0]), "WordTransDefLibrary/SessionLibrary/WordTransDef");
 
-            //XmlNodeList nodeList =
-            //Console.WriteLine(nodeList.Count);
-            //int qNum = 5;
-            //GetQuestion(nodeList, 1);
-
-            //bool userQ = currentQuestion.PrintInfo;
-            /*/update score parameters
-            currentQuestion.lWordScore = new ScoreParameters()
-            {
-                Attempts = 5,
-                Score = 2,
-                TimeSpent = "6"
-            };
-            currentQuestion.lDescriptionScore = new ScoreParameters()
-            {
-                Attempts = 3,
-                Score = 2,
-                TimeSpent = "10"
-            };
-            userQ = currentQuestion.PrintInfo;
-            //get previous question
-            currentQuestion = LanTutorXMLMoving.GetPreviousQuestionl(5, ref nodeList);
-            userQ = currentQuestion.PrintInfo;
-            //get next question
-            currentQuestion = LanTutorXMLMoving.GetNextQuestionl(5, ref nodeList);
-            userQ = currentQuestion.PrintInfo;
-            //done learning
-            currentQuestion = LanTutorXMLMoving.GetCurrentQuestionl(5, ref nodeList);
-            //update score parameters
-            currentQuestion.lWordScore = new ScoreParameters()
-            {
-                Attempts = 5,
-                Score = 2,
-                TimeSpent = "6"
-            };
-            currentQuestion.lDescriptionScore = new ScoreParameters()
-            {
-                Attempts = 3,
-                Score = 2,
-                TimeSpent = "10"
-            };
-            userQ = currentQuestion.PrintInfo;
-            LanTutorXMLMoving.UpdateCurrentNodeList(currentQuestion, 5, ref nodeList);
-            Console.WriteLine(nodeList.Count);
-            currentQuestion = LanTutorXMLMoving.GetCurrentQuestionl(5, ref nodeList);
-            userQ = currentQuestion.PrintInfo;
-            /*
-             * flush usersessionreportcard to file
-             *      over write the whole reportcard
-             */
-            //Console.WriteLine(Directory.GetFiles(Environment.CurrentDirectory + "/ReportCards")[0]);
-            //LTWriteFile.WriteNodeListToXml(Directory.GetFiles(Environment.CurrentDirectory + "/ReportCards")[0], nodeList);
-            //LTPhaseOneCore.DataPrep();
-            /*
-             * load LanTut dictionary in memory
-             * prepare LTScoreCard for the current session
-             * save session scorecardreport to file
-             */
-            /*/string[] lfiles = Directory.GetFiles("/Volumes/Secondary/Projects/PersonalGTK/LanTutor/LanTutor/Dictionary/");
-            string lusername = "Ngoni1";
-
-            string dict = "eng-rus_LanTut_.xml";
-            Console.Clear();
-            Console.WriteLine("New Session");
-            //PrepareUserReportCard(lmainDirectory,lusername);
-            XmlNodeList mySessionLists = LanTutorXMLMoving.LoadSessionQuestions(LanTutorXMLMoving.LoadXMLFile(lmainDirectory+"/ReportCards/Ngoni_ReportCard.xml"));
-            
-            Console.WriteLine(mySessionLists.Count);
-            int ii = 1;
-            WordTransDefDict qtouser = LanTutorXMLMoving.GetCurrentQuestion(ref ii,ref mySessionLists);
-            bool tmp = qtouser.PrintInfo;
-
-            WordTransDefDict nxtqtouser = LanTutorXMLMoving.GetNextQuestion(ref ii, ref mySessionLists);
-            tmp = nxtqtouser.PrintInfo;
-
-            WordTransDefDict prvqtouser = LanTutorXMLMoving.GetPreviousQuestion(ref ii, ref mySessionLists);
-            tmp = prvqtouser.PrintInfo;
-            
-            LTScoreCard lT = new LTScoreCard();
-            lT.SessionLibrary = myset;
-            LTWriteFile.WriteSchemeToxml(lT, "/Volumes/Secondary/Projects/PersonalGTK/LanTutor/LanTutor/Dictionary");
-            WriteXmlData();
-            */
         }
 
 
@@ -217,27 +144,12 @@ namespace LanTutor
         {
             //load the definations of the files
             Console.WriteLine("Definations =>"+ myset.Count);
-            
-            //bool dictsfound = LTReadFile.FindDictionariesFolder;
-            //System.Console.WriteLine("File Found :" + LTReadFile.NumberOfAvailableDictionaries);
-            
-            //load each file from folder
-            
-            //foreach (string lfile in LTReadFile.GetTranslationDictionaries(llantutmaindirectory))
-            //{
-                System.Console.WriteLine(lfile + "\n Name " + LTReadFile.GetDictionaryFileInfo(lfile).Name + "\n\t Size " + LTReadFile.GetDictionaryFileInfo(lfile).Length);
-                WordTransDefLibrary lwordTransDefLibrary = PrepareSessionLibrary(myset, lfile);
 
-                System.Console.WriteLine("Pack Counter: \t" + lwordTransDefLibrary.SessionLibrary.Count);
-            //break;
-            /*write the pack to file.xml
-            string fname = LTReadFile.GetDictionaryFileInfo(lfile).Name;
-            fname = fname.Substring(0, fname.IndexOf('.'));
-            LTWriteFile.WriteSchemeToxml(wordTransDefLibrary, fname + "_LanTut_.xml", "/Volumes/Secondary/Projects/PersonalGTK/LanTutor/LanTutor/Dictionary/");
-            */
+            System.Console.WriteLine(lfile + "\n Name " + LTReadFile.GetDictionaryFileInfo(lfile).Name + "\n\t Size " + LTReadFile.GetDictionaryFileInfo(lfile).Length);
+            WordTransDefLibrary lwordTransDefLibrary = PrepareSessionLibrary(myset, lfile);
 
+            System.Console.WriteLine("Pack Counter: \t" + lwordTransDefLibrary.SessionLibrary.Count);
 
-            //}
             return lwordTransDefLibrary;
 
         }

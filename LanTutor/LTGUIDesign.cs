@@ -4,11 +4,11 @@ using Gtk;
 
 namespace LanTutor
 {
-    public class LTGUIDesign : Window
+    public class LTGUIDesign
     {
         private static string FontStyle = "Noteworthy 20";
         private static string discrFontStyle = "Noteworthy 18";
-        
+        public Window Mainwindow;
         
         protected static string[] AvailableReportCards
         {
@@ -20,13 +20,14 @@ namespace LanTutor
             get;
             set;
         }
-        private LTGUIElements UIElement
+        public static LTGUIElements UIElement
         {
             get;
             set;
         }
-        internal LTGUIDesign() : base("App Using Default")
+        public LTGUIDesign()
         {
+            Mainwindow = new Window("Default Window");
             AvailableReportCards = LTReadFile.GetReportCards;
             ActiveReportCard = AvailableReportCards[0];
             UIElement = new LTGUIElements("App Using Default", this);
@@ -34,29 +35,36 @@ namespace LanTutor
             UIElement.TranslationView.Editable = false;
             UIElement.MotherTongueView.Editable = false;
             
-            //sessionDataList = LTPhaseOneCore.ExecuteProgramBackend(UIElement.LanguageComboOptions.ActiveText);
-            //Add(UIElement.buttonFix);
-            ShowAll();
+            Mainwindow.ShowAll();
         }
-        internal LTGUIDesign(string appName) : base(appName)
+        public LTGUIDesign(string appName)
         {
+            Mainwindow = new Window(appName);
             AvailableReportCards = LTReadFile.GetReportCards;
             ActiveReportCard = AvailableReportCards[0];
             UIElement = new LTGUIElements(appName, this);
 
             UIElement.TranslationView.Editable = false;
             UIElement.MotherTongueView.Editable = false;
+
+
+            
             LoadInitialQuestion();
-            //sessionDataList = LTPhaseOneCore.ExecuteProgramBackend(UIElement.LanguageComboOptions.ActiveText);
-            //Add(UIElement.buttonFix);
-            ShowAll();
+            Mainwindow.ShowAll();
         }
         
         public void LoadInitialQuestion()
         {
+            //check combo box value
+            //DialogBoxWindow("Load Initial Question\t\n"+UIElement.LanguageComboOptions.ActiveText);
+            UIElement.sessionDataList = LTPhaseOneCore.ExecuteProgramBackend(UIElement.LanguageComboOptions.ActiveText);
+            //reload sessiondatalist based on combo box value
+            //get the current question
             XmlNodeList tmpNodeList = UIElement.sessionDataList;
             WordTransDef tmp = LanTutorXMLMoving.GetCurrentQuestionl(UIElement.QuestionIterator, ref tmpNodeList);
-            DialogBoxWindow(UIElement.LanguageComboOptions.ActiveText);
+            
+            LTGUIElements.UpdateScoresComboBox(tmp.lDescriptionScore,tmp.lWordScore);
+            
             UpdateMotherTongueView(tmp.lword);
             UpdateTranslationView(tmp.lTrans);
             UpdateDescriptionView(tmp.ldef);
@@ -81,7 +89,7 @@ namespace LanTutor
 
         public void UpdateTranslationView(string TVTranslation)
         {
-            DialogBoxWindow(UIElement.testingMode.ActiveText);
+            //DialogBoxWindow(UIElement.testingMode.ActiveText);
             System.Text.StringBuilder encrypted = new System.Text.StringBuilder();
             if(UIElement.testingMode.ActiveText.Equals("Word Test"))
             {
@@ -102,7 +110,7 @@ namespace LanTutor
 
         public void UpdateDescriptionView(System.Collections.Generic.List<string> TVdescrption)
         {
-            DialogBoxWindow(UIElement.testingMode.ActiveText);
+            //DialogBoxWindow(UIElement.testingMode.ActiveText);
 
             UIElement.DescriptionView.ModifyFont(Pango.FontDescription.FromString(discrFontStyle));
             System.Text.StringBuilder builder = new System.Text.StringBuilder();

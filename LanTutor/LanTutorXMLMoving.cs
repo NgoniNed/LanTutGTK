@@ -68,13 +68,14 @@ namespace LanTutor
         public static WordTransDef GetCurrentQuestionl(int CurrentQuestion, ref XmlNodeList currentSessionList)
         {
             XmlNode currentQ;
-            if (CurrentQuestion >= currentSessionList.Count)
+            if (CurrentQuestion == 50)
             {
-                currentQ = currentSessionList[currentSessionList.Count - 1];
+                LTGUIDesign.DialogBoxWindow(CurrentQuestion+"\tis greater than\t"+currentSessionList.Count);
+                currentQ = currentSessionList[0];
             }
             else if (CurrentQuestion < 0)
             {
-                currentQ = currentSessionList[0];
+                currentQ = currentSessionList[currentSessionList.Count-1];
             }
             else
             {

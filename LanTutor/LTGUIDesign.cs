@@ -25,6 +25,7 @@ namespace LanTutor
             get;
             set;
         }
+
         public LTGUIDesign()
         {
             Mainwindow = new Window("Default Window");

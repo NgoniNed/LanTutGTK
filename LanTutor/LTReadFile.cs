@@ -14,6 +14,24 @@ namespace LanTutor
     public static class LTReadFile
     {
         /// <summary>
+        /// method to read user settings file and returns
+        /// an obect with the previous sessions settings for the user
+        /// </summary>
+        /// <returns></returns>
+        public static UserSettings getUserSettings()
+        {
+            XmlDocument document = new XmlDocument();
+            document.Load("user_configurations.xml");
+            
+            UserSettings userSettings = new UserSettings()
+            {
+                ActiveLanguage = document.GetElementsByTagName("ActiveLanguage")[0].InnerText,
+                ActiveSessionMode = document.GetElementsByTagName("ActiveSessionMode")[0].InnerText,
+                CurrentQuestion = document.GetElementsByTagName("CurrentQuestion")[0].InnerText
+            };
+            return userSettings;
+        }
+        /// <summary>
         /// Gets all the report card xml files from the report cards directory
         /// </summary>
         public static string[] GetReportCards

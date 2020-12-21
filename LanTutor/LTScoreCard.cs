@@ -3,6 +3,34 @@ using System.Xml.Serialization;
 using System.Collections.Generic;
 namespace LanTutor
 {
+    [Serializable]
+    public struct UserSettings
+    {
+        [XmlElement(ElementName = "ActiveLanguage")]
+        public string ActiveLanguage
+        {
+            get;
+            set;
+        }
+        [XmlElement(ElementName = "ActiveSessionMode")]
+        public string ActiveSessionMode
+        {
+            get;
+            set;
+        }
+        [XmlElement(ElementName = "CurrentQuestion")]
+        public string CurrentQuestion
+        {
+            get;
+            set;
+        }
+        public UserSettings(string Selectedlanguage, string lsessionMode, string lQuestion)
+        {
+            ActiveLanguage = Selectedlanguage;
+            ActiveSessionMode = lsessionMode;
+            CurrentQuestion = lQuestion;
+        }
+    }
     /// <summary>
     /// Score Card information for all the WordTransDefDicts in the session
     /// </summary>

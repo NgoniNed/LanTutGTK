@@ -25,31 +25,27 @@ namespace LanTutor
             get;
             set;
         }
-
-        public LTGUIDesign()
-        {
-            Mainwindow = new Window("Default Window");
-            AvailableReportCards = LTReadFile.GetReportCards;
-            ActiveReportCard = AvailableReportCards[0];
-            UIElement = new LTGUIElements("App Using Default", this);
-
-            UIElement.TranslationView.Editable = false;
-            UIElement.MotherTongueView.Editable = false;
-            
-            Mainwindow.ShowAll();
-        }
-        public LTGUIDesign(string appName)
+        
+        public LTGUIDesign(string appName = "Default Window")
         {
             Mainwindow = new Window(appName);
             AvailableReportCards = LTReadFile.GetReportCards;
+            /*
+             * On app start up create user settings file
+             *  
+             * User settings file
+             *  if this file doesnt exist this is the first time its being used
+             *  and load the first report card available
+             *  otherwise load the last one user was using.
+             */
+            
+            
             ActiveReportCard = AvailableReportCards[0];
             UIElement = new LTGUIElements(appName, this);
 
             UIElement.TranslationView.Editable = false;
             UIElement.MotherTongueView.Editable = false;
 
-
-            
             LoadInitialQuestion();
             Mainwindow.ShowAll();
         }

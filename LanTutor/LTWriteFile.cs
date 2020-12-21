@@ -12,6 +12,25 @@ namespace LanTutor
     public static class LTWriteFile
     {
         /// <summary>
+        /// Method to create an xml file based on data type of object passed to it
+        /// file is saved in the UserConfigurations file location
+        /// </summary>
+        /// <param name="dataObject"></param>
+        public static void WriteGenericSchemeToXml(object dataObject)
+        {
+            XmlSerializer genericSerializer = new XmlSerializer(dataObject.GetType(), "");
+            using (MemoryStream genericStreamer = new MemoryStream())
+            {
+                genericSerializer.Serialize(genericStreamer, dataObject);
+                File.Delete("user_configurations.xml");
+                using (FileStream fs = new FileStream("user_configurations.xml", FileMode.CreateNew))
+                {
+                    genericStreamer.WriteTo(fs);
+                    fs.Flush();
+                }
+            }
+        }
+        /// <summary>
         /// Method Used to Write LTSessionScoreCard structure define data
         /// to and xml file using data serialization as the xml files markup
         /// structure.

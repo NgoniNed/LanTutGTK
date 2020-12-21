@@ -41,6 +41,7 @@ namespace LanTutor
 
         public LTGUIElements(string appTitle,LTGUIDesign mainWind): base(appTitle)
         {
+            
             sessionDataList= LTPhaseOneCore.ExecuteProgramBackend(LanguageComboOptions.ActiveText);
             //LTGUIDesign.DialogBoxWindow("LTGUIElements"+"\n\t"+sessionDataList.Count.ToString());
             parentWind = mainWind;
@@ -159,6 +160,11 @@ namespace LanTutor
             TreeIter Testiter;
             testingMode.Model.GetIterFirst(out Testiter);
             testingMode.SetActiveIter(Testiter);
+            while(!testingMode.ActiveText.Equals(LTReadFile.getUserSettings().ActiveSessionMode))
+            {
+                testingMode.Model.IterNext(ref Testiter);
+                testingMode.SetActiveIter(Testiter);
+            }
             buttonFix.Put(testingModeLabel, 50, 40);
             buttonFix.Put(testingMode, 20, 60);
 
@@ -189,6 +195,12 @@ namespace LanTutor
 
             QuestionTracker.Model.GetIterFirst(out QuestionTreeiter);
             QuestionTracker.SetActiveIter(QuestionTreeiter);
+            while(!QuestionTracker.ActiveText.Equals(LTReadFile.getUserSettings().CurrentQuestion))
+            {
+                QuestionTracker.Model.IterNext(ref QuestionTreeiter);
+                QuestionTracker.SetActiveIter(QuestionTreeiter);
+            }
+            QuestionIterator =int.Parse( QuestionTracker.ActiveText.Split('/')[0])-1;
             buttonFix.Put(QuestionTrackerLabel, 400, 120);
             buttonFix.Put(QuestionTracker, 400, 140);
 
@@ -222,6 +234,13 @@ namespace LanTutor
             TreeIter iter;
             LanguageComboOptions.Model.GetIterFirst(out iter);
             LanguageComboOptions.SetActiveIter(iter);
+            while(!LanguageComboOptions.ActiveText.Equals(LTReadFile.getUserSettings().ActiveLanguage))
+            {
+                LanguageComboOptions.Model.IterNext(ref iter);
+                LanguageComboOptions.SetActiveIter(iter);
+            }
+            
+            LTGUIDesign.DialogBoxWindow(LanguageComboOptions.ActiveText);
             Label languagelabel = new Label("Language Selection");
             buttonFix.Put(languagelabel, 400, 40);
             buttonFix.Put(LanguageComboOptions, 400, 60);
@@ -229,7 +248,7 @@ namespace LanTutor
 
         internal void SetupGUIEventHandlers()
         {
-            parentWind.Mainwindow.DeleteEvent += Exit_Activated;
+            parentWind.Mainwindow.DeleteEvent += EndSession_Activated;
             LanguageComboOptions.Changed += LanguageComboOptions_Changed;
             testingMode.Changed += TestingMode_Changed;
             NextQuestion.Clicked += NextQuestion_Clicked;
@@ -238,7 +257,7 @@ namespace LanTutor
             EndSessionbtn.Clicked += EndSession_Activated;
             LoadSession.Activated += LoadSession_Activated;
             EndSession.Activated += EndSession_Activated;
-            exit.Activated += Exit_Activated;
+            exit.Activated += EndSession_Activated;
         }
         private void TestingMode_Changed(object sender, EventArgs e)
         {
@@ -379,13 +398,30 @@ namespace LanTutor
         private void EndSession_Activated(object sender, EventArgs e)
         {
             //LTGUIDesign.DialogBoxWindow("Session Is Ending");
+            PreserveUserSettings();
             Application.Quit();
         }
-
-        private void Exit_Activated(object sender, EventArgs e)
+        /// <summary>
+        /// Method that preserves the settings currently active on the users
+        /// current session
+        /// </summary>
+        private void PreserveUserSettings()
         {
-            //LTGUIDesign.DialogBoxWindow("Application Is Quiting");
-            Application.Quit();
+            /*
+             * Aspects to preserve
+             *      current language option
+             *      session mode
+             *      currentQuestion
+             */
+            UserSettings userSetting = new UserSettings()
+            {
+                ActiveLanguage = LanguageComboOptions.ActiveText,
+                ActiveSessionMode = testingMode.ActiveText,
+                CurrentQuestion = QuestionTracker.ActiveText
+            };
+
+            LTWriteFile.WriteGenericSchemeToXml(userSetting);
+            //throw new NotImplementedException();
         }
     }
 }

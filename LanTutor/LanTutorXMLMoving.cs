@@ -70,7 +70,7 @@ namespace LanTutor
             XmlNode currentQ;
             if (CurrentQuestion == 50)
             {
-                LTGUIDesign.DialogBoxWindow(CurrentQuestion+"\tis greater than\t"+currentSessionList.Count);
+                //LTGUIDesign.DialogBoxWindow(CurrentQuestion+"\tis greater than\t"+currentSessionList.Count);
                 currentQ = currentSessionList[0];
             }
             else if (CurrentQuestion < 0)

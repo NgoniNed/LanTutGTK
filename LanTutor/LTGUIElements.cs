@@ -90,8 +90,6 @@ namespace LanTutor
             parentWind.Mainwindow.SetDefaultSize(525, 800);
             parentWind.Mainwindow.SetPosition(WindowPosition.CenterOnParent);
             parentWind.Mainwindow.ModifyBg(StateType.Normal, cLightSlateBlue);
-            bool GUIIconSet = parentWind.Mainwindow.SetIconFromFile("/Volumes/Secondary/Projects/PersonalGTK/LanTutor/LanTutor/GUIResources/LanTut.png");
-            Console.WriteLine("GUI Icon Set:\t" + GUIIconSet);
         }
         private void SetupGUIButtons()
         {
@@ -240,7 +238,7 @@ namespace LanTutor
                 LanguageComboOptions.SetActiveIter(iter);
             }
             
-            LTGUIDesign.DialogBoxWindow(LanguageComboOptions.ActiveText);
+            //LTGUIDesign.DialogBoxWindow(LanguageComboOptions.ActiveText);
             Label languagelabel = new Label("Language Selection");
             buttonFix.Put(languagelabel, 400, 40);
             buttonFix.Put(LanguageComboOptions, 400, 60);
@@ -349,17 +347,17 @@ namespace LanTutor
 
         internal static void UpdateScoresComboBox(ScoreParameters lScoreDescription, ScoreParameters lScoreWord)
         {
-            lScoreWord.Score = 5;
+            //lScoreWord.Score = 5;
             TreeIter userScoreTreeIter = new TreeIter();
             UserwordScore.Model.GetIterFromString(out userScoreTreeIter, lScoreWord.Score.ToString());
             UserwordScore.SetActiveIter(userScoreTreeIter);
 
-            lScoreDescription.Score = 15;
+            //lScoreDescription.Score = 15;
             TreeIter userDescrpScoreTreeIter = new TreeIter();
             UserDescriptionScore.Model.GetIterFromString(out userDescrpScoreTreeIter, lScoreDescription.Score.ToString());
             UserDescriptionScore.SetActiveIter(userDescrpScoreTreeIter);
 
-            lScoreWord.Attempts = 80;
+            //lScoreWord.Attempts = 80;
             TreeIter userAttemptsTreeIter = new TreeIter();
             AttemptsTracker.Model.GetIterFromString(out userAttemptsTreeIter, lScoreWord.Attempts.ToString());
             AttemptsTracker.SetActiveIter(userAttemptsTreeIter);
@@ -378,7 +376,7 @@ namespace LanTutor
             }
             else
             {
-                LTGUIDesign.DialogBoxWindow("Yo yo end of line reset questiontracter");
+                //LTGUIDesign.DialogBoxWindow("Yo yo end of line reset questiontracter");
                 QuestionIterator = 0;
                 //TreeIter resetQuestionComboBox = new TreeIter();
                 

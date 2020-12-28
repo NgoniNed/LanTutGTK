@@ -15,8 +15,10 @@ namespace LanTutor
     {
         internal static XmlNodeList ExecuteProgramBackend(string ReportCardPath)
         {
-            if (!(Directory.Exists(Environment.CurrentDirectory + "/ReportCards")) || AvailableReportCards.Length<1)
+            if ((AvailableReportCards.Length < 1)&&(!(Directory.Exists(Environment.CurrentDirectory + "/ReportCards"))) )
             {
+
+
                 LTPhaseOneCore.LanTutEnvironmentSetup();
                 
             }
@@ -38,7 +40,7 @@ namespace LanTutor
                 }
                 catch (NullReferenceException NRE)
                 {
-                    LTGUIDesign.DialogBoxWindow(NRE.Message);
+                    //LTGUIDesign.DialogBoxWindow(NRE.Message);
                     break;
                 }
                 
@@ -47,7 +49,7 @@ namespace LanTutor
             //update active iter for combolanguage box to be that of the one with the available report card
             //LanguageComboOptions.mo
             //look for the index of the reportcard referenced by the user interface
-            return LanTutorXMLMoving.LoadSessionQuestions(LTReadFile.LoadXMLFile(AvailableReportCards[0]), "WordTransDefLibrary/SessionLibrary/WordTransDef");
+            return LanTutorXMLMoving.LoadSessionQuestions(LTReadFile.LoadXMLFile(AvailableReportCards[1]), "WordTransDefLibrary/SessionLibrary/WordTransDef");
 
         }
 
@@ -63,11 +65,15 @@ namespace LanTutor
             /*
              * move tei translation dictionaries to lantutdictionaries
              */
-            WordTransDefLibrary llibrary = DataPrep(LTReadFile.GetTranslationDictionaries(lmainDirectory + "/LanTutDictionaries")[1], LTReadFile.LoadDefinations(lmainDirectory + "/EnglishDictionaries"));
-            FileInfo fI = new FileInfo(LTReadFile.GetTranslationDictionaries(lmainDirectory + "/LanTutDictionaries")[0]);//LTReadFile.GetTranslationDictionaries(lmainDirectory + "/LanTutDictionaries")[0]
-            //create the report cards folder
-            Directory.CreateDirectory(lmainDirectory + "/ReportCards");
-            LTWriteFile.WriteSchemeToxml(llibrary, "/ngoni_" + fI.Name.Replace(".tei","") + "_ReportCard.xml", lmainDirectory + "/ReportCards");
+            foreach (string fileName in LTReadFile.GetTranslationDictionaries(lmainDirectory + "/LanTutDictionaries"))
+            {
+                WordTransDefLibrary llibrary = DataPrep(fileName, LTReadFile.LoadDefinations(lmainDirectory + "/EnglishDictionaries"));
+                FileInfo fI = new FileInfo(fileName);//LTReadFile.GetTranslationDictionaries(lmainDirectory + "/LanTutDictionaries")[0]);//LTReadFile.GetTranslationDictionaries(lmainDirectory + "/LanTutDictionaries")[0]
+                                                                                                                             //create the report cards folder
+                Directory.CreateDirectory(lmainDirectory + "/ReportCards");
+                LTWriteFile.WriteSchemeToxml(llibrary, "/ngoni_" + fI.Name.Replace(".tei", "") + "_ReportCard.xml", lmainDirectory + "/ReportCards");
+            }
+            
         }
         internal static string[] GenerateLangaugeOptions
         {

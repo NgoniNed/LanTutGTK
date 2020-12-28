@@ -12,9 +12,16 @@ namespace LanTutor
         
         protected static string[] AvailableReportCards
         {
-            get;
-            set;
+            get
+            {
+                return LTReadFile.GetReportCards;
+            }
+            set
+            {
+                AvailableReportCards = value;
+            }
         }
+
         protected static string ActiveReportCard
         {
             get;
@@ -29,7 +36,7 @@ namespace LanTutor
         public LTGUIDesign(string appName = "Default Window")
         {
             Mainwindow = new Window(appName);
-            AvailableReportCards = LTReadFile.GetReportCards;
+            //AvailableReportCards = LTReadFile.GetReportCards;
             /*
              * On app start up create user settings file
              *  
@@ -65,6 +72,7 @@ namespace LanTutor
             UpdateMotherTongueView(tmp.lword);
             UpdateTranslationView(tmp.lTrans);
             UpdateDescriptionView(tmp.ldef);
+            
         }
         
         public static void DialogBoxWindow(string msg)

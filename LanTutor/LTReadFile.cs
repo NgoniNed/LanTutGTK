@@ -38,9 +38,18 @@ namespace LanTutor
         {
             get
             {
-                if(Directory.Exists(Environment.CurrentDirectory + "/ReportCards")&& Directory.GetFiles(Environment.CurrentDirectory + "/ReportCards").Length>0)
+                if(Directory.Exists(Environment.CurrentDirectory + "/ReportCards"))
                 {
-                    return Directory.GetFiles(Environment.CurrentDirectory + "/ReportCards");
+                    if(Directory.GetFiles(Environment.CurrentDirectory + "/ReportCards").Length > 1)
+                    {
+                        return Directory.GetFiles(Environment.CurrentDirectory + "/ReportCards");
+                    }
+                    else
+                    {
+                        LTPhaseOneCore.LanTutEnvironmentSetup();
+
+                        return Directory.GetFiles(Environment.CurrentDirectory + "/ReportCards");
+                    }
                 }
                 else
                 {

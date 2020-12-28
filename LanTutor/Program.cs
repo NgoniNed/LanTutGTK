@@ -7,7 +7,7 @@ namespace LanTutor
         public static void Main(string[] args)
         {
             Application.Init();
-            new LTGUIDesign("LanTutor 1.0");
+            new LTGUIDesign("LanTutor 1.7");
             Application.Run();
             
         }

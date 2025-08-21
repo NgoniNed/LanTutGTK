@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Xml;
 using Gtk;
+using LanTutor.DataModels;
 
 namespace LanTutor
 {

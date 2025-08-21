@@ -1,6 +1,7 @@
 ﻿using System.Xml.Serialization;
 using System.IO;
 using System.Xml;
+using LanTutor.DataModels;
 
 namespace LanTutor
 {

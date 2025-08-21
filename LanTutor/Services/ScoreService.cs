@@ -48,5 +48,15 @@ namespace LanTutor.Services
                 .ToList();
         }
 
+        public List<int> GetPriorityWordIds(int userId)
+        {
+            return _context.Scores
+                .Where(s => s.UserId == userId)
+                .OrderByDescending(s => s.Attempts)
+                .ThenBy(s => s.ScoreValue)
+                .Select(s => s.WordId)
+                .ToList();
+        }
+
     }
 }

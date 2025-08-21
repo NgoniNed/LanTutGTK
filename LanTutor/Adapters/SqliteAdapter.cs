@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using LanTutor.Database;
 using LanTutor.DataModels;
 using LanTutor.Interfaces;
@@ -11,10 +12,28 @@ namespace LanTutor.Adapters
     {
         private List<WordTransDef> sessionWords;
         private readonly WordService wordService = new WordService(new LanTutorContext());
-
+        /*
         public List<WordTransDef> LoadSession(string language)
         {
             sessionWords = wordService.GetAllWords();
+            return sessionWords;
+        }*/
+        public List<WordTransDef> LoadSession(string language)
+        {
+            var userId = 1; // or get from context
+            var priorityIds = new ScoreService(new LanTutorContext()).GetPriorityWordIds(userId);
+            var allWords = wordService.GetAllWords();
+
+            var prioritizedWords = priorityIds
+                .Select(id => allWords.FirstOrDefault(w => w.Id == id))
+                .Where(w => w != null)
+                .ToList();
+
+            var remainingWords = allWords
+                .Where(w => !priorityIds.Contains(w.Id))
+                .ToList();
+
+            sessionWords = prioritizedWords.Concat(remainingWords).ToList();
             return sessionWords;
         }
 

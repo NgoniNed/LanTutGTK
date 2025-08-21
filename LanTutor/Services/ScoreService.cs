@@ -1,6 +1,7 @@
 ﻿using LanTutor.DataModels;
 using LanTutor.Database;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace LanTutor.Services
 {
@@ -38,5 +39,14 @@ namespace LanTutor.Services
 
             _context.SaveChanges();
         }
+
+        public List<Score> GetScoresByUser(int userId)
+        {
+            return _context.Scores
+                .Where(s => s.UserId == userId)
+                .OrderByDescending(s => s.ScoreValue)
+                .ToList();
+        }
+
     }
 }

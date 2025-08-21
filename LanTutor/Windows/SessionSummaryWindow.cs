@@ -20,15 +20,30 @@ namespace LanTutor.Windows
                 Editable = false,
                 CursorVisible = false
             };
-            Button saveButton = new Button("Save Summary");
+            Button saveButton = new Button("💾 Save Summary");
             saveButton.Clicked += (sender, e) =>
             {
-                SaveSummaryToXml(sessionWords);
-                SaveSummaryToJson(sessionWords);
-                MessageDialog dialog = new MessageDialog(this, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, "Session saved to XML and JSON.");
-                dialog.Run();
-                dialog.Destroy();
+                FileChooserDialog fileChooser = new FileChooserDialog(
+                    "Save Session Summary",
+                    this,
+                    FileChooserAction.Save,
+                    "Cancel", ResponseType.Cancel,
+                    "Save", ResponseType.Accept
+                );
+
+                fileChooser.CurrentName = "SessionSummary.json";
+
+                if (fileChooser.Run() == (int)ResponseType.Accept)
+                {
+                    SaveSummaryToJson(sessionWords, fileChooser.Filename);
+                    MessageDialog dialog = new MessageDialog(this, DialogFlags.Modal, MessageType.Info, ButtonsType.Ok, "Session saved successfully.");
+                    dialog.Run();
+                    dialog.Destroy();
+                }
+
+                fileChooser.Destroy();
             };
+
 
             layout.PackStart(saveButton, false, false, 5);
 
@@ -70,7 +85,7 @@ namespace LanTutor.Windows
             LTWriteFile.WriteSchemeToxml(scoreCard, "SessionSummary", Environment.CurrentDirectory + "/");
         }
 
-        private void SaveSummaryToJson(List<WordTransDef> sessionWords)
+        private void SaveSummaryToJson(List<WordTransDef> sessionWords, string filePath)
         {
             var scoreCard = new LTSessionScoreCard
             {
@@ -85,7 +100,7 @@ namespace LanTutor.Windows
             };
 
             string json = Newtonsoft.Json.JsonConvert.SerializeObject(scoreCard, Newtonsoft.Json.Formatting.Indented);
-            System.IO.File.WriteAllText("SessionSummary.json", json);
+            System.IO.File.WriteAllText(filePath, json);
         }
 
     }

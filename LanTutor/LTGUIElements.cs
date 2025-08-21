@@ -80,6 +80,13 @@ namespace LanTutor
 
             SessionSubMenu.Append(LoadSession);
             SessionSubMenu.Append(EndSession);
+            MenuItem viewProgress = new MenuItem("View Progress");
+            viewProgress.Activated += (sender, e) =>
+            {
+                ProgressDashboardWindow dashboard = new ProgressDashboardWindow(1);
+                dashboard.Show();
+            };
+            SessionSubMenu.Append(viewProgress);
 
             LTmenu.Append(file);
             LTmenu.Append(SessionMenu);

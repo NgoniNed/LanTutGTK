@@ -182,6 +182,7 @@
     <Compile Include="Adapters\AutoAdapter.cs" />
     <Compile Include="Services\ScoreService.cs" />
     <Compile Include="Windows\SessionSummaryWindow.cs" />
+    <Compile Include="Windows\ProgressDashboardWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataModels\" />

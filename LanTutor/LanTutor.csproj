@@ -181,6 +181,7 @@
     <Compile Include="Adapters\SqliteAdapter.cs" />
     <Compile Include="Adapters\AutoAdapter.cs" />
     <Compile Include="Services\ScoreService.cs" />
+    <Compile Include="Windows\SessionSummaryWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataModels\" />
@@ -189,6 +190,7 @@
     <Folder Include="FrontEndDataProvider\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Adapters\" />
+    <Folder Include="Windows\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

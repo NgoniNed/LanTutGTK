@@ -4,6 +4,7 @@ using Gtk;
 using LanTutor.Adapters;
 using LanTutor.DataModels;
 using LanTutor.Interfaces;
+using LanTutor.Windows;
 
 namespace LanTutor
 {
@@ -407,10 +408,17 @@ namespace LanTutor
 
         private void EndSession_Activated(object sender, EventArgs e)
         {
-            //LTGUIDesign.DialogBoxWindow("Session Is Ending");
             PreserveUserSettings();
-            Application.Quit();
+
+            SessionSummaryWindow summaryWindow = new SessionSummaryWindow(sessionDataList);
+            summaryWindow.DeleteEvent += (o, args) =>
+            {
+                Application.Quit();
+            };
+
+            summaryWindow.Show();
         }
+
         /// <summary>
         /// Method that preserves the settings currently active on the users
         /// current session

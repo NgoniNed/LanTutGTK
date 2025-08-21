@@ -2,6 +2,7 @@
 using System;
 using System.IO;
 using System.Xml;
+using LanTutor.Interfaces;
 
 namespace LanTutor
 {
@@ -13,6 +14,11 @@ namespace LanTutor
     /// </summary>
     public class LTPhaseOneCore : LTGUIDesign
     {
+        public LTPhaseOneCore(ILanTutorFrontend adapter, string appName) : base(adapter, appName)
+        {
+
+        }
+
         internal static XmlNodeList ExecuteProgramBackend(string ReportCardPath)
         {
             if ((AvailableReportCards.Length < 1)&&(!(Directory.Exists(Environment.CurrentDirectory + "/ReportCards"))) )

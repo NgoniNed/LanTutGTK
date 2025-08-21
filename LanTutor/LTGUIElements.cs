@@ -45,12 +45,12 @@ namespace LanTutor
         }
         private ILanTutorFrontend adapter;
 
-        public LTGUIElements(string appTitle,LTGUIDesign mainWind): base(appTitle)
+        public LTGUIElements(string appTitle,LTGUIDesign mainWind, ILanTutorFrontend adapter) : base(appTitle)
         {
             
             //sessionDataList= LTPhaseOneCore.ExecuteProgramBackend(LanguageComboOptions.ActiveText);
 
-            adapter = new AutoAdapter();
+            this.adapter = adapter;
             sessionDataList = adapter.LoadSession(LanguageComboOptions.ActiveText);
             //LTGUIDesign.DialogBoxWindow("LTGUIElements"+"\n\t"+sessionDataList.Count.ToString());
             parentWind = mainWind;

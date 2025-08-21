@@ -5,23 +5,28 @@ using LanTutor.Database;
 using LanTutor.DataModels;
 using LanTutor.Interfaces;
 using LanTutor.Services;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace LanTutor.Adapters
 {
     public class SqliteAdapter : ILanTutorFrontend
     {
         private List<WordTransDef> sessionWords;
-        private readonly WordService wordService = new WordService(new LanTutorContext());
-        /*
+        private readonly IWordService wordService;
+        private readonly Services.ScoreService scoreService;
+
+        public SqliteAdapter(IWordService wordService, ScoreService scoreService)
+        {
+            this.wordService = wordService ?? throw new ArgumentNullException(nameof(wordService));
+            this.scoreService = scoreService ?? throw new ArgumentNullException(nameof(scoreService));
+        }
+
         public List<WordTransDef> LoadSession(string language)
         {
-            sessionWords = wordService.GetAllWords();
-            return sessionWords;
-        }*/
-        public List<WordTransDef> LoadSession(string language)
-        {
+            //var autoAdapter = ServiceProvider.GetService<ILanTutorFrontend>();
+
             var userId = 1; // or get from context
-            var priorityIds = new ScoreService(new LanTutorContext()).GetPriorityWordIds(userId);
+            var priorityIds = scoreService.GetPriorityWordIds(userId);
             var allWords = wordService.GetAllWords();
 
             var prioritizedWords = priorityIds
@@ -41,7 +46,6 @@ namespace LanTutor.Adapters
         public void SubmitAnswer(int index, string userAnswer)
         {
             var word = sessionWords[index];
-            var scoreService = new ScoreService(new LanTutorContext());
 
             // For now, simulate score update
             word.lWordScore.Score += 5;
@@ -74,5 +78,4 @@ namespace LanTutor.Adapters
             sessionWords[index].lDescriptionScore = descriptionScore;
         }
     }
-
 }

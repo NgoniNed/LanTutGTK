@@ -8,15 +8,14 @@ namespace LanTutor.Adapters
 {
     public class AutoAdapter : ILanTutorFrontend
     {
-        private ILanTutorFrontend activeAdapter;
+        private readonly ILanTutorFrontend activeAdapter;
 
-        public AutoAdapter()
+        public AutoAdapter(IWordService wordService, Services.ScoreService scoreService)
         {
             var settings = LTReadFile.getUserSettings();
             var language = settings.ActiveLanguage;
 
-            var context = new LanTutor.Database.LanTutorContext();
-            bool dbHasWords = context.Words.Any();
+            bool dbHasWords = wordService.GetAllWords().Any();
 
             if (settings.ActiveLanguage.Contains("xml") || !dbHasWords)
             {
@@ -25,7 +24,6 @@ namespace LanTutor.Adapters
 
                 if (!dbHasWords)
                 {
-                    var wordService = new WordService(context);
                     foreach (var word in words)
                     {
                         wordService.AddWord(word);
@@ -35,12 +33,11 @@ namespace LanTutor.Adapters
                         }
                     }
                 }
-
-                activeAdapter = new SqliteAdapter(); // switch to DB after migration
+                activeAdapter = new SqliteAdapter(wordService, scoreService); //Switch to DB after migration. DI.
             }
             else
             {
-                activeAdapter = new SqliteAdapter();
+                activeAdapter = new SqliteAdapter(wordService, scoreService);  //DI.
             }
         }
 

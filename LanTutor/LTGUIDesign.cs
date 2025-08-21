@@ -35,23 +35,15 @@ namespace LanTutor
             get;
             set;
         }
-        
-        public LTGUIDesign(string appName = "Default Window")
+
+        private readonly ILanTutorFrontend adapter;
+
+        //Dependency Injection constructor
+        public LTGUIDesign(ILanTutorFrontend adapter, string appName = "Default Window")
         {
+            this.adapter = adapter;
             Mainwindow = new Window(appName);
-            //AvailableReportCards = LTReadFile.GetReportCards;
-            /*
-             * On app start up create user settings file
-             *  
-             * User settings file
-             *  if this file doesnt exist this is the first time its being used
-             *  and load the first report card available
-             *  otherwise load the last one user was using.
-             */
-            
-            
-            ActiveReportCard = AvailableReportCards[0];
-            UIElement = new LTGUIElements(appName, this);
+            UIElement = new LTGUIElements(appName, this, adapter);  // Pass the adapter to LTGUIElements
 
             UIElement.TranslationView.Editable = false;
             UIElement.MotherTongueView.Editable = false;
@@ -59,7 +51,7 @@ namespace LanTutor
             LoadInitialQuestion();
             Mainwindow.ShowAll();
         }
-        
+
         public void LoadInitialQuestion()
         {
             //check combo box value
@@ -67,7 +59,7 @@ namespace LanTutor
 
             //UIElement.sessionDataList = LTPhaseOneCore.ExecuteProgramBackend(UIElement.LanguageComboOptions.ActiveText);
 
-            ILanTutorFrontend adapter = new AutoAdapter();
+            //ILanTutorFrontend adapter = new AutoAdapter();
             UIElement.sessionDataList = adapter.LoadSession(UIElement.LanguageComboOptions.ActiveText);
 
             //reload sessiondatalist based on combo box value

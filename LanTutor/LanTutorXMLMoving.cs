@@ -87,13 +87,13 @@ namespace LanTutor
                 lword = currentQ.SelectSingleNode("lword").InnerText,
                 lTrans = currentQ.SelectSingleNode("lTrans").InnerText,
                 ldef = new System.Collections.Generic.List<string>(),
-                lDescriptionScore = new ScoreParameters()
+                lDescriptionScore = new DescriptionScore()
                 {
                     Attempts = int.Parse(currentQ.SelectSingleNode("DescriptionScore/Attempts").InnerText),
                     Score = double.Parse(currentQ.SelectSingleNode("DescriptionScore/Score").InnerText),
                     TimeSpent = currentQ.SelectSingleNode("DescriptionScore/TimeSpent").InnerText,
                 },
-                lWordScore = new ScoreParameters()
+                lWordScore = new WordScore()
                 {
                     Attempts = int.Parse(currentQ.SelectSingleNode("WordScore/Attempts").InnerText),
                     Score = double.Parse(currentQ.SelectSingleNode("WordScore/Score").InnerText),

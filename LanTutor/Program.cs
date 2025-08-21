@@ -3,6 +3,7 @@ using LanTutor.Adapters;
 using LanTutor.Database;
 using LanTutor.Interfaces;
 using LanTutor.Services;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LanTutor
@@ -24,13 +25,14 @@ namespace LanTutor
             services.AddSingleton<ILanTutorFrontend, AutoAdapter>();
 
             var serviceProvider = services.BuildServiceProvider();
-            var autoAdapter = serviceProvider.GetService<ILanTutorFrontend>();
-            /*
+            
             using (var context = new LanTutor.Database.LanTutorContext())
             {
                 context.Database.EnsureCreated();
+                context.Database.Migrate();
                 context.SeedData();
-            }*/
+            }
+            var autoAdapter = serviceProvider.GetService<ILanTutorFrontend>();
 
             new LTGUIDesign(autoAdapter,"LanTutor 1.15");
             Application.Run();

@@ -6,7 +6,7 @@ using System.Xml.Serialization;
 namespace LanTutor.DataModels
 {
     /// <summary>
-    /// Object which holds word, translation and defination
+    /// Object which holds word, translation and definition
     /// </summary>
     [Serializable]
     public class WordTransDef
@@ -27,8 +27,9 @@ namespace LanTutor.DataModels
             get;
             set;
         }
+
         /// <summary>
-        /// List of the word's defination/description
+        /// List of the word's definition/description
         /// </summary>
         [NotMapped]
         public List<string> ldef
@@ -36,6 +37,7 @@ namespace LanTutor.DataModels
             get;
             set;
         }
+
         public ICollection<Definition> Definitions
         {
             get;
@@ -43,7 +45,7 @@ namespace LanTutor.DataModels
         }
 
         /// <summary>
-        /// Updates the definations/description variable
+        /// Updates the definitions/description variable
         /// </summary>
         /// <param name="appendInfo"></param>
         public void Updateldef(string appendInfo)
@@ -58,42 +60,29 @@ namespace LanTutor.DataModels
         {
             lword = lword + "==>>" + appendInfo;
         }
-        /// <summary>
-        /// Updates the Word's score
-        /// </summary>
-        /// <param name="appendInfo"></param>
-        public void UpdatelWordScore(ScoreParameters appendInfo)
-        {
-            lWordScore = appendInfo;
-        }
-        /// <summary>
-        /// Updates the Description/Defination's score
-        /// </summary>
-        /// <param name="appendInfo"></param>
-        public void UpdatelDescriptionScore(ScoreParameters appendInfo)
-        {
-            lDescriptionScore = appendInfo;
-        }
+
         /// <summary>
         /// Word Score property
         /// </summary>
         [XmlElement(ElementName = "WordScore")]
         [NotMapped]
-        public ScoreParameters lWordScore
+        public WordScore lWordScore
         {
             get;
             set;
         }
+
         /// <summary>
-        /// Description/Definations Score Property
+        /// Description/Definitions Score Property
         /// </summary>
         [XmlElement(ElementName = "DescriptionScore")]
         [NotMapped]
-        public ScoreParameters lDescriptionScore
+        public DescriptionScore lDescriptionScore
         {
             get;
             set;
         }
+
         /// <summary>
         /// Prints the Information of the WordTransDef object
         /// </summary>

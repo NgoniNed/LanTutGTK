@@ -71,7 +71,7 @@
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Memory">
-      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Extensions.Primitives">
       <HintPath>..\packages\Microsoft.Extensions.Primitives.3.1.28\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
@@ -147,6 +147,18 @@
       <HintPath>..\packages\Microsoft.EntityFrameworkCore.Sqlite.Core.3.1.28\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Sqlite.dll</HintPath>
     </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="BouncyCastle.Crypto">
+      <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="JustCRC32C">
+      <HintPath>..\packages\JustCRC32C.1.1.0\lib\netstandard2.0\JustCRC32C.dll</HintPath>
+    </Reference>
+    <Reference Include="libJustCRC32C_Native">
+      <HintPath>..\packages\JustCRC32C.1.1.0\lib\netstandard2.0\libJustCRC32C_Native.dll</HintPath>
+    </Reference>
+    <Reference Include="TonSdk.Core">
+      <HintPath>..\packages\TonSdk.Core.0.3.9\lib\netstandard2.0\TonSdk.Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
@@ -185,6 +197,9 @@
     <Compile Include="Windows\ProgressDashboardWindow.cs" />
     <Compile Include="Services\IConfigurationService.cs" />
     <Compile Include="Services\ConfigurationService.cs" />
+    <Compile Include="DataModels\WordScore.cs" />
+    <Compile Include="DataModels\DescriptionScore.cs" />
+    <Compile Include="DataModels\ScoreParameters.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataModels\" />

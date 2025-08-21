@@ -2,6 +2,7 @@
 using LanTutor.Database;
 using System.Linq;
 using System.Collections.Generic;
+using System;
 
 namespace LanTutor.Services
 {
@@ -14,39 +15,49 @@ namespace LanTutor.Services
             _context = context;
         }
 
-        public void SaveScore(int userId, int wordId, ScoreParameters wordScore, ScoreParameters descriptionScore)
+        public void SaveScore(int userId, int wordId, ScoreParameters wordScoreParams, ScoreParameters descriptionScoreParams)
         {
-            var existingScore = _context.Scores
-                .FirstOrDefault(s => s.UserId == userId && s.WordId == wordId);
+            var word = _context.Words.FirstOrDefault(w => w.Id == wordId);
+            if (word == null) return;
 
-            if (existingScore != null)
+            var wordScore = _context.WordScores.FirstOrDefault(ws => ws.WordTransDefId == wordId);
+            if (wordScore == null)
             {
-                existingScore.Attempts = wordScore.Attempts + descriptionScore.Attempts;
-                existingScore.ScoreValue = wordScore.Score + descriptionScore.Score;
-                existingScore.TimeSpent = wordScore.TimeSpent; // or combine both
+                wordScore = new WordScore { WordTransDefId = wordId, Score = 0, Attempts = 0, TimeSpent = "0" };
+                _context.WordScores.Add(wordScore);
             }
-            else
+
+            var descriptionScore = _context.DescriptionScores.FirstOrDefault(ds => ds.WordTransDefId == wordId);
+            if (descriptionScore == null)
             {
-                _context.Scores.Add(new Score
-                {
-                    UserId = userId,
-                    WordId = wordId,
-                    Attempts = wordScore.Attempts + descriptionScore.Attempts,
-                    ScoreValue = wordScore.Score + descriptionScore.Score,
-                    TimeSpent = wordScore.TimeSpent
-                });
+                descriptionScore = new DescriptionScore { WordTransDefId = wordId, Score = 0, Attempts = 0, TimeSpent = "0" };
+                _context.DescriptionScores.Add(descriptionScore);
             }
+
+            wordScore.Score = wordScoreParams.Score;
+            wordScore.Attempts = wordScoreParams.Attempts;
+            wordScore.TimeSpent = wordScoreParams.TimeSpent;
+
+            descriptionScore.Score = descriptionScoreParams.Score;
+            descriptionScore.Attempts = descriptionScoreParams.Attempts;
+            descriptionScore.TimeSpent = descriptionScoreParams.TimeSpent;
 
             _context.SaveChanges();
         }
 
-        public List<Score> GetScoresByUser(int userId)
+        public List<object> GetScoresByUser(int userId)
         {
-            return _context.Scores
-                .Where(s => s.UserId == userId)
-                .OrderByDescending(s => s.ScoreValue)
-                .ToList();
+            var wordScores = _context.WordScores
+                .Where(ws => ws.WordTransDef.Id == userId)
+                .ToList<object>();
+
+            var descriptionScores = _context.DescriptionScores
+               .Where(ds => ds.WordTransDef.Id == userId)
+               .ToList<object>();
+
+            return wordScores.Concat(descriptionScores).ToList();
         }
+
 
         public List<int> GetPriorityWordIds(int userId)
         {
@@ -57,6 +68,5 @@ namespace LanTutor.Services
                 .Select(s => s.WordId)
                 .ToList();
         }
-
     }
 }

@@ -34,9 +34,9 @@ namespace LanTutor.Windows
             }
 
             builder.AppendLine("\n Score Breakdown:");
-            foreach (var score in scores)
+            foreach (DataModels.WordScore score in scores)
             {
-                builder.AppendLine($"Word ID: {score.WordId} | Score: {score.ScoreValue} | Attempts: {score.Attempts} | Time: {score.TimeSpent}");
+                builder.AppendLine($"Word ID: {score.WordScoreId} | Score: {score.Score} | Attempts: {score.Attempts} | Time: {score.TimeSpent}");
             }
 
             dashboardText.Buffer.Text = builder.ToString();

@@ -71,8 +71,8 @@ namespace LanTutor
 
             //WordTransDef tmp = LanTutorXMLMoving.GetCurrentQuestionl(UIElement.QuestionIterator, ref tmpNodeList);
 
-            if (tmp.lWordScore == null) tmp.lWordScore = new ScoreParameters();
-            if (tmp.lDescriptionScore == null) tmp.lDescriptionScore = new ScoreParameters();
+            if (tmp.lWordScore == null) tmp.lWordScore = new WordScore();
+            if (tmp.lDescriptionScore == null) tmp.lDescriptionScore = new DescriptionScore();
 
             LTGUIElements.UpdateScoresComboBox(tmp.lDescriptionScore,tmp.lWordScore);
             

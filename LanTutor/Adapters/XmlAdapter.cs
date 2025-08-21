@@ -86,17 +86,11 @@ namespace LanTutor.Adapters
         }
         public void UpdateScore(int index, ScoreParameters wordScore, ScoreParameters descriptionScore)
         {
-            try
-            {
-                var word = GetQuestion(index);
-                word.lWordScore = wordScore;
-                word.lDescriptionScore = descriptionScore;
-                LanTutorXMLMoving.UpdateCurrentNodeList(word, index, ref sessionNodes);
-            }
-            catch (NullReferenceException ex)
-            {
-                Console.WriteLine($"Error updating XML score: {ex.Message}");
-            }
+            var sessionWord = sessionWords[index];
+            sessionWord.lWordScore.Score = wordScore.Score;
+            sessionWord.lWordScore.Attempts = wordScore.Attempts;
+            sessionWord.lDescriptionScore.Score = descriptionScore.Score;
+            sessionWord.lDescriptionScore.Attempts = descriptionScore.Attempts;
         }
     }
 }

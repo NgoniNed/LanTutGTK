@@ -161,13 +161,13 @@ namespace LanTutor
                         lTrans = senseBuilder.ToString(),
                         lword = formBuilder.ToString(),
                         ldef = new List<string>(),
-                        lWordScore = new ScoreParameters()
+                        lWordScore = new WordScore()
                         {
                             Attempts = 0,
                             Score = 0,
                             TimeSpent = "0",
                         },
-                        lDescriptionScore = new ScoreParameters()
+                        lDescriptionScore = new DescriptionScore()
                         {
                             Attempts = 0,
                             Score = 0,

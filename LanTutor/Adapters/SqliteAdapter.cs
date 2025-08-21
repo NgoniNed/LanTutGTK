@@ -112,8 +112,11 @@ namespace LanTutor.Adapters
 
         public void UpdateScore(int index, ScoreParameters wordScore, ScoreParameters descriptionScore)
         {
-            sessionWords[index].lWordScore = wordScore;
-            sessionWords[index].lDescriptionScore = descriptionScore;
+            var sessionWord = sessionWords[index];
+            sessionWord.lWordScore.Score = wordScore.Score;
+            sessionWord.lWordScore.Attempts = wordScore.Attempts;
+            sessionWord.lDescriptionScore.Score = descriptionScore.Score;
+            sessionWord.lDescriptionScore.Attempts = descriptionScore.Attempts;
         }
     }
 }

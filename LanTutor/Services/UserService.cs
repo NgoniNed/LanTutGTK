@@ -49,6 +49,25 @@ namespace LanTutor.Services
         {
             return HashPassword(password) == hash;
         }
+
+        public User GetOrCreateUserByWallet(string walletAddress)
+        {
+            var user = _context.Users.FirstOrDefault(u => u.Username == walletAddress);
+            if (user == null)
+            {
+                user = new User
+                {
+                    Username = walletAddress,
+                    PasswordHash = "",
+                    Role = "Learner"
+                };
+                _context.Users.Add(user);
+                _context.SaveChanges();
+            }
+            return user;
+        }
+
     }
 
 }
+

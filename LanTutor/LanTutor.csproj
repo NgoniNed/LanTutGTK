@@ -176,11 +176,19 @@
     <Compile Include="Services\ISessionService.cs" />
     <Compile Include="Services\WordService.cs" />
     <Compile Include="Services\IWordService.cs" />
+    <Compile Include="Interfaces\ILanTutorFrontend.cs" />
+    <Compile Include="Adapters\XmlAdapter.cs" />
+    <Compile Include="Adapters\SqliteAdapter.cs" />
+    <Compile Include="Adapters\AutoAdapter.cs" />
+    <Compile Include="Services\ScoreService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataModels\" />
     <Folder Include="Database\" />
     <Folder Include="Services\" />
+    <Folder Include="FrontEndDataProvider\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Adapters\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

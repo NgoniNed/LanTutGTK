@@ -209,7 +209,7 @@ namespace LanTutor
     /// The parameters under which a grading is assigned
     /// </summary>
     [Serializable]
-    public struct ScoreParameters
+    public class ScoreParameters
     {
         /// <summary>
         /// Score assigned for answering the question

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Xml;
 using Gtk;
+using LanTutor.Adapters;
 using LanTutor.DataModels;
+using LanTutor.Interfaces;
 
 namespace LanTutor
 {
@@ -62,12 +64,24 @@ namespace LanTutor
         {
             //check combo box value
             //DialogBoxWindow("Load Initial Question\t\n"+UIElement.LanguageComboOptions.ActiveText);
-            UIElement.sessionDataList = LTPhaseOneCore.ExecuteProgramBackend(UIElement.LanguageComboOptions.ActiveText);
+
+            //UIElement.sessionDataList = LTPhaseOneCore.ExecuteProgramBackend(UIElement.LanguageComboOptions.ActiveText);
+
+            ILanTutorFrontend adapter = new AutoAdapter();
+            UIElement.sessionDataList = adapter.LoadSession(UIElement.LanguageComboOptions.ActiveText);
+
             //reload sessiondatalist based on combo box value
             //get the current question
-            XmlNodeList tmpNodeList = UIElement.sessionDataList;
-            WordTransDef tmp = LanTutorXMLMoving.GetCurrentQuestionl(UIElement.QuestionIterator, ref tmpNodeList);
-            
+            //XmlNodeList tmpNodeList = UIElement.sessionDataList;
+
+            //ILanTutorFrontend adapter = new AutoAdapter();
+            WordTransDef tmp = adapter.GetQuestion(UIElement.QuestionIterator);
+
+            //WordTransDef tmp = LanTutorXMLMoving.GetCurrentQuestionl(UIElement.QuestionIterator, ref tmpNodeList);
+
+            if (tmp.lWordScore == null) tmp.lWordScore = new ScoreParameters();
+            if (tmp.lDescriptionScore == null) tmp.lDescriptionScore = new ScoreParameters();
+
             LTGUIElements.UpdateScoresComboBox(tmp.lDescriptionScore,tmp.lWordScore);
             
             UpdateMotherTongueView(tmp.lword);

@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using Gtk;
+using LanTutor.Adapters;
+using LanTutor.DataModels;
+using LanTutor.Interfaces;
 
 namespace LanTutor
 {
@@ -24,7 +28,7 @@ namespace LanTutor
         public static ComboBox AttemptsTracker;
         public static ComboBox UserwordScore;
         public static ComboBox UserDescriptionScore;
-        public System.Xml.XmlNodeList sessionDataList { get; set; }
+        public List<WordTransDef> sessionDataList { get; set; }
         public int QuestionIterator = 0;
         protected TreeIter QuestionTreeiter;
 
@@ -38,11 +42,15 @@ namespace LanTutor
             get;
             set;
         }
+        private ILanTutorFrontend adapter;
 
         public LTGUIElements(string appTitle,LTGUIDesign mainWind): base(appTitle)
         {
             
-            sessionDataList= LTPhaseOneCore.ExecuteProgramBackend(LanguageComboOptions.ActiveText);
+            //sessionDataList= LTPhaseOneCore.ExecuteProgramBackend(LanguageComboOptions.ActiveText);
+
+            adapter = new AutoAdapter();
+            sessionDataList = adapter.LoadSession(LanguageComboOptions.ActiveText);
             //LTGUIDesign.DialogBoxWindow("LTGUIElements"+"\n\t"+sessionDataList.Count.ToString());
             parentWind = mainWind;
             buttonFix = new Fixed();
@@ -291,7 +299,9 @@ namespace LanTutor
                         if (lfileInfo.Name.Contains(languageSelected))
                         {
                             //load the report card
-                            sessionDataList = LanTutorXMLMoving.LoadSessionQuestions(LTReadFile.LoadXMLFile(lfileInfo.FullName), "WordTransDefLibrary/SessionLibrary/WordTransDef");
+                            //sessionDataList = LanTutorXMLMoving.LoadSessionQuestions(LTReadFile.LoadXMLFile(lfileInfo.FullName), "WordTransDefLibrary/SessionLibrary/WordTransDef");
+                            sessionDataList = adapter.LoadSession(LanguageComboOptions.ActiveText);
+
                             parentWind.LoadInitialQuestion();
                         }
                         else
@@ -330,7 +340,9 @@ namespace LanTutor
             else
             {
                 //LTGUIDesign.DialogBoxWindow("Something went wrong\nReloading Session Data");
-                sessionDataList = LTPhaseOneCore.ExecuteProgramBackend(LanguageComboOptions.ActiveText);
+                sessionDataList = adapter.LoadSession(LanguageComboOptions.ActiveText);
+
+//                sessionDataList = LTPhaseOneCore.ExecuteProgramBackend(LanguageComboOptions.ActiveText);
             }
         }
         private void PreviousQuestion_Clicked(object sender, EventArgs e)

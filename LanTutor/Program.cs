@@ -14,9 +14,12 @@ namespace LanTutor
             Application.Init();
             var services = new ServiceCollection();
             services.AddDbContext<LanTutorContext>();
-            services.AddScoped<Services.ScoreService>();
+            services.AddScoped<ScoreService>();
             services.AddScoped<IWordService, WordService>();
             services.AddScoped<ISessionService, SessionService>();
+
+            services.AddSingleton<IConfigurationService, ConfigurationService>();
+            services.AddScoped<XmlAdapter>();
 
             services.AddSingleton<ILanTutorFrontend, AutoAdapter>();
 
@@ -29,7 +32,7 @@ namespace LanTutor
                 context.SeedData();
             }*/
 
-            new LTGUIDesign(autoAdapter,"LanTutor 1.7");
+            new LTGUIDesign(autoAdapter,"LanTutor 1.15");
             Application.Run();
             
         }

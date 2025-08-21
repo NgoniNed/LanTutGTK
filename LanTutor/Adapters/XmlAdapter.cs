@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Xml;
 using LanTutor.DataModels;
 using LanTutor.Interfaces;
@@ -13,29 +14,49 @@ namespace LanTutor.Adapters
 
         public List<WordTransDef> LoadSession(string language)
         {
-            string[] reportCards = LTReadFile.GetReportCards;
-            foreach (var report in reportCards)
+            try
             {
-                if (report.Contains(language))
+                string[] reportCards = LTReadFile.GetReportCards;
+                foreach (var report in reportCards)
                 {
-                    sessionNodes = LanTutorXMLMoving.LoadSessionQuestions(LTReadFile.LoadXMLFile(report), "WordTransDefLibrary/SessionLibrary/WordTransDef");
-                    break;
+                    if (report.Contains(language))
+                    {
+                        sessionNodes = LanTutorXMLMoving.LoadSessionQuestions(LTReadFile.LoadXMLFile(report), "WordTransDefLibrary/SessionLibrary/WordTransDef");
+                        break;
+                    }
                 }
-            }
 
-            sessionWords = new List<WordTransDef>();
-            for (int i = 0; i < sessionNodes.Count; i++)
+                sessionWords = new List<WordTransDef>();
+                for (int i = 0; i < sessionNodes.Count; i++)
+                {
+                    sessionWords.Add(LanTutorXMLMoving.GetCurrentQuestionl(i, ref sessionNodes));
+                }
+
+                return sessionWords;
+            }
+            catch (Exception ex)
             {
-                sessionWords.Add(LanTutorXMLMoving.GetCurrentQuestionl(i, ref sessionNodes));
+                Console.WriteLine($"Error loading XML session: {ex.Message}");
+                return new List<WordTransDef>();
             }
-
-            return sessionWords;
         }
 
         public WordTransDef GetQuestion(int index)
         {
-            currentIndex = index;
-            return LanTutorXMLMoving.GetCurrentQuestionl(index, ref sessionNodes);
+            try
+            {
+                if (sessionNodes == null || sessionNodes.Count == 0 || index < 0 || index >= sessionNodes.Count)
+                {
+                    return null; // Or throw an exception, log an error, etc.
+                }
+                currentIndex = index;
+                return LanTutorXMLMoving.GetCurrentQuestionl(index, ref sessionNodes);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error getting XML question: {ex.Message}");
+                return null;
+            }
         }
 
         public void SubmitAnswer(int index, string userAnswer)
@@ -52,15 +73,30 @@ namespace LanTutor.Adapters
 
         public ScoreParameters GetScoreForQuestion(int index)
         {
-            return GetQuestion(index).lWordScore;
-        }
+            try
+            {
+                return GetQuestion(index).lWordScore;
+            }
+            catch (NullReferenceException ex)
+            {
+                Console.WriteLine($"Error getting XML score: {ex.Message}");
+                return new ScoreParameters();
+            }
 
+        }
         public void UpdateScore(int index, ScoreParameters wordScore, ScoreParameters descriptionScore)
         {
-            var word = GetQuestion(index);
-            word.lWordScore = wordScore;
-            word.lDescriptionScore = descriptionScore;
-            LanTutorXMLMoving.UpdateCurrentNodeList(word, index, ref sessionNodes);
+            try
+            {
+                var word = GetQuestion(index);
+                word.lWordScore = wordScore;
+                word.lDescriptionScore = descriptionScore;
+                LanTutorXMLMoving.UpdateCurrentNodeList(word, index, ref sessionNodes);
+            }
+            catch (NullReferenceException ex)
+            {
+                Console.WriteLine($"Error updating XML score: {ex.Message}");
+            }
         }
     }
 }

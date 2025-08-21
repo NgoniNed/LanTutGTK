@@ -9,17 +9,23 @@ namespace LanTutor.Adapters
     public class AutoAdapter : ILanTutorFrontend
     {
         private readonly ILanTutorFrontend activeAdapter;
+        private readonly IConfigurationService _configurationService;
 
-        public AutoAdapter(IWordService wordService, Services.ScoreService scoreService)
+        public AutoAdapter(IWordService wordService, ScoreService scoreService, ISessionService sessionService,IConfigurationService configurationService, XmlAdapter xmlAdapter)
         {
-            var settings = LTReadFile.getUserSettings();
+            //var settings = LTReadFile.getUserSettings();
+            //var language = settings.ActiveLanguage;
+            _configurationService = configurationService;
+            var settings = _configurationService.GetUserSettings();
             var language = settings.ActiveLanguage;
+
 
             bool dbHasWords = wordService.GetAllWords().Any();
 
             if (settings.ActiveLanguage.Contains("xml") || !dbHasWords)
             {
-                var xmlAdapter = new XmlAdapter();
+                //var xmlAdapter = new XmlAdapter();
+                //var words = xmlAdapter.LoadSession(language);
                 var words = xmlAdapter.LoadSession(language);
 
                 if (!dbHasWords)
@@ -33,11 +39,11 @@ namespace LanTutor.Adapters
                         }
                     }
                 }
-                activeAdapter = new SqliteAdapter(wordService, scoreService); //Switch to DB after migration. DI.
+                activeAdapter = new SqliteAdapter(wordService, scoreService, sessionService, _configurationService);
             }
             else
             {
-                activeAdapter = new SqliteAdapter(wordService, scoreService);  //DI.
+                activeAdapter = new SqliteAdapter(wordService, scoreService, sessionService, _configurationService);
             }
         }
 

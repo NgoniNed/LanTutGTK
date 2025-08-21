@@ -183,6 +183,8 @@
     <Compile Include="Services\ScoreService.cs" />
     <Compile Include="Windows\SessionSummaryWindow.cs" />
     <Compile Include="Windows\ProgressDashboardWindow.cs" />
+    <Compile Include="Services\IConfigurationService.cs" />
+    <Compile Include="Services\ConfigurationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataModels\" />

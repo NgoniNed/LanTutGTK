@@ -15,7 +15,9 @@ Features
     • Data Storage:** Supports XML and SQLite data storage.
     • User Settings:** Persists user preferences for language and learning mode.
     • TON Wallet Integration:** Basic integration with TON wallet for authentication (work in progress).
+
 Dependencies
+
     • .NET Framework 4.7
     • GTK#
     • Microsoft.Data.Sqlite

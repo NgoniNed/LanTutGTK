@@ -201,6 +201,7 @@
     <Compile Include="DataModels\DescriptionScore.cs" />
     <Compile Include="DataModels\ScoreParameters.cs" />
     <Compile Include="Services\TonConnectListener.cs" />
+    <Compile Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataModels\" />

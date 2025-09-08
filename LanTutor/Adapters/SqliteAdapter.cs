@@ -26,17 +26,15 @@ namespace LanTutor.Adapters
             this.sessionService = sessionService ?? throw new ArgumentNullException(nameof(sessionService));
             _configurationService = configurationService ?? throw new ArgumentNullException(nameof(configurationService));
 
-            //userId = _configurationService.GetCurrentUserId(); // Get from config.
             userId = 1;
             var language = _configurationService.GetUserSettings().ActiveLanguage;
-            currentSession = sessionService.StartSession(userId, language); // Use configured language.
+            currentSession = sessionService.StartSession(userId, language);
         }
 
         public List<WordTransDef> LoadSession(string language)
         {
-            //var autoAdapter = ServiceProvider.GetService<ILanTutorFrontend>();
 
-            var userId = 1; // or get from context
+            var userId = 1; 
             var priorityIds = scoreService.GetPriorityWordIds(userId);
             var allWords = wordService.GetAllWords();
 

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
 using Gtk;
 using LanTutor.Adapters;
 using LanTutor.DataModels;
@@ -87,11 +89,56 @@ namespace LanTutor
                 dashboard.Show();
             };
             SessionSubMenu.Append(viewProgress);
+            Menu connectMenu = new Menu();
+            MenuItem connectMenuItem = new MenuItem("Connect");
+            connectMenuItem.Submenu = connectMenu;
+
+            MenuItem tonItem = new MenuItem("TON");
+            MenuItem solanaItem = new MenuItem("Solana");
+            MenuItem ethItem = new MenuItem("Ethereum");
+            MenuItem bscItem = new MenuItem("BSC");
+
+            connectMenu.Append(tonItem);
+            connectMenu.Append(solanaItem);
+            connectMenu.Append(ethItem);
+            connectMenu.Append(bscItem);
+
+            tonItem.Activated += (sender, e) =>
+            {
+                var tonListener = new Services.TonConnectListener();
+                tonListener.Start();
+
+                string tonConnectUrl = "http://localhost:5050/connect.html"; // locally hosted page
+
+                try
+                {
+                    if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                    {
+                        Process.Start(new ProcessStartInfo("cmd", $"/c start {tonConnectUrl}") { CreateNoWindow = true });
+                    }
+                    else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+                    {
+                        Process.Start("open", tonConnectUrl);
+                    }
+                    else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                    {
+                        Process.Start("xdg-open", tonConnectUrl);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    LTGUIDesign.DialogBoxWindow($"Failed to launch browser: {ex.Message}");
+                }
+            };
+
+
+
 
             LTmenu.Append(file);
             LTmenu.Append(SessionMenu);
             LTmenu.Append(exit);
             LTmenu.Append(AboutMenuItem);
+            LTmenu.Append(connectMenuItem);
 
             buttonFix.Put(LTmenu, 0, 0);
         }

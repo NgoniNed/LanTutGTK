@@ -43,7 +43,7 @@ namespace LanTutor
         {
             this.adapter = adapter;
             Mainwindow = new Window(appName);
-            UIElement = new LTGUIElements(appName, this, adapter);  // Pass the adapter to LTGUIElements
+            UIElement = new LTGUIElements(appName, this, adapter);
 
             UIElement.TranslationView.Editable = false;
             UIElement.MotherTongueView.Editable = false;

@@ -47,7 +47,7 @@ namespace LanTutor.Adapters
             {
                 if (sessionNodes == null || sessionNodes.Count == 0 || index < 0 || index >= sessionNodes.Count)
                 {
-                    return null; // Or throw an exception, log an error, etc.
+                    return null;
                 }
                 currentIndex = index;
                 return LanTutorXMLMoving.GetCurrentQuestionl(index, ref sessionNodes);

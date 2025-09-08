@@ -8,13 +8,13 @@ LanTutor employs a spaced repetition system with a priority bias within its tuto
 
 Features
 
-    • Multiple Learning Modes:** Practice, Word Test, Description Test (partially implemented)
-    • Language Selection:** Choose from available language dictionaries.
-    • Score Tracking:** Monitor progress and identify areas for improvement.
-    • Session Management:** Track learning sessions.
-    • Data Storage:** Supports XML and SQLite data storage.
-    • User Settings:** Persists user preferences for language and learning mode.
-    • TON Wallet Integration:** Basic integration with TON wallet for authentication (work in progress).
+    • Multiple Learning Modes: Practice, Word Test, Description Test (partially implemented)
+    • Language Selection: Choose from available language dictionaries.
+    • Score Tracking: Monitor progress and identify areas for improvement.
+    • Session Management: Track learning sessions.
+    • Data Storage: Supports XML and SQLite data storage.
+    • User Settings: Persists user preferences for language and learning mode.
+    • TON Wallet Integration: Basic integration with TON wallet for authentication (work in progress).
 
 Dependencies
 
